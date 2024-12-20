@@ -1,5 +1,5 @@
-# Calculator conversions
+# **Calculator conversions**
 
-Basic calculator function
-Direct conversion
-Calculation result conversion
+Basic calculator function  
+Direct conversions  
+Calculation result conversions  
