@@ -1,2 +1,2 @@
 # Calculator conversions
-type="Calculatrice conversion - Calculator conversion.pdf"
+[embed]Calculatrice conversion - Calculator conversion.pdf[/embed]
