@@ -1,2 +1,5 @@
 # Calculator conversions
-<img src="CalcConv.png" width="200" />
+
+Basic calculator function
+Direct conversion
+Calculation result conversion
