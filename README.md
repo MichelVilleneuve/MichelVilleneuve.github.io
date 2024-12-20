@@ -1,2 +1,2 @@
 # Calculator conversions
-<img src="CalcConv.png" width="300" />
+<img src="CalcConv.png" width="200" />
