@@ -1,1 +1,1 @@
-### **Calculator conversions - Calculatrice conversions**  [Open page](gh-pages/CalcConv.md)
+### **Calculator conversions - Calculatrice conversions**  [Open page](CalcConv.md)
