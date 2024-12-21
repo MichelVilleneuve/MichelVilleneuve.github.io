@@ -1,4 +1,3 @@
-https://github.com/MichelVilleneuve/CalcConv/README.md#
 # **Calculator conversions - Calculatrice conversions**
 <img src="CalcConvMain.png" width="800" />  
 
