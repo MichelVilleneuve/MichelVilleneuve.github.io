@@ -9,6 +9,7 @@
 &nbsp; &nbsp; &nbsp; Partial line  
 &nbsp; &nbsp; &nbsp; Steel Sections  
 &nbsp; &nbsp; &nbsp; Steel Shapes  
+&nbsp; &nbsp; &nbsp; Weld Symbol  
 
   
 
