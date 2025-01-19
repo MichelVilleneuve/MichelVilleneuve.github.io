@@ -7,7 +7,7 @@
 #### &nbsp; Block system  
 #### &nbsp; Hex fasteners  
 #### &nbsp; Partial line  
-#### &nbsp; Steel Sections  
+#### &nbsp; Steel Sections  [Open info](https://github.com/AddCOM/Structural-Steel-Shape/)
 #### &nbsp; Steel Shapes  
 #### &nbsp; Weld Symbol  
 
