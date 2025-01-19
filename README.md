@@ -8,7 +8,7 @@
 #### &nbsp; Hex fasteners  
 #### &nbsp; Partial line  
 #### &nbsp; Steel Sections  
-#### &nbsp; Steel Shapes  [The Basic](https://addcom.github.io/Structural-Steel-Shape/) [- Direct Draw](https://addcom.github.io/Structural-Steel-Shape/)  
+#### &nbsp; Steel Shapes  [The Basic](https://addcom.github.io/Structural-Steel-Shape/) [- Direct Draw](https://addcom.github.io/sss-direct/)  
 #### &nbsp; Weld Symbol  
 
 ## **Inventor Add-Ons** - (macros)  
