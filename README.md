@@ -7,8 +7,8 @@
 #### &nbsp; Block system  
 #### &nbsp; Hex fasteners  
 #### &nbsp; Partial line  
-#### &nbsp; Steel Sections  [Info](https://addcom.github.io/Structural-Steel-Shape/)
-#### &nbsp; Steel Shapes  
+#### &nbsp; Steel Sections  
+#### &nbsp; Steel Shapes  [Info](https://addcom.github.io/Structural-Steel-Shape/readme.md)  
 #### &nbsp; Weld Symbol  
 
 ## **Inventor Add-Ons** - (macros)  
