@@ -12,4 +12,4 @@
 &nbsp; Weld Symbols  [The Basic](https://addcom.github.io/WeldSymbols/)  
 
 ## **Inventor Add-Ons** - (macros)  
-#### &nbsp; Steel Shape for 2D Sketch  
+&nbsp; Steel Shape for 2D Sketch  
