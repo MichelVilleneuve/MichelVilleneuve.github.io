@@ -9,7 +9,7 @@
 #### &nbsp; Partial line  
 #### &nbsp; Steel Sections  
 #### &nbsp; Steel Shapes Plus [The Basic](https://addcom.github.io/Structural-Steel-Shape/) [- Direct Draw](https://addcom.github.io/sss-direct/) [- The Editor](https://addcom.github.io/sss-editor/)
-[- Direct Pick](https://addcom.github.io/sss-editor/)
+[- Direct Pick](https://addcom.github.io/sss-pick/)
 
 #### &nbsp; Weld Symbol  
 
