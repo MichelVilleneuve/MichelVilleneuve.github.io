@@ -3,7 +3,7 @@
 &nbsp; &nbsp; &nbsp;  The calculator app features basic math operations and some unit conversions.  
 &nbsp; FieldCad  
 &nbsp; &nbsp; &nbsp;  The small CAD like app features basic CAD operations to take measurement on site.  
-&nbsp; NotePad
+&nbsp; NotePad  
 &nbsp; &nbsp; &nbsp;  The note app features basic note taking operations.  
 &nbsp; FlowChart  
 &nbsp; &nbsp; &nbsp;  The flow chart app features basic rectangle operations with text.  
