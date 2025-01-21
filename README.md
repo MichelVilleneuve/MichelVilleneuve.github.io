@@ -1,11 +1,11 @@
 ## **Android Applications Projects**  
 &nbsp; CalculatorConversions  [Open page](https://michelvilleneuve.github.io/CalcConv/)  
 &nbsp; &nbsp; &nbsp;  The calculator app features basic math operations and some unit conversions.  
-&nbsp; FieldCad
-&nbsp; NotePad
-&nbsp; FlowChart
-&nbsp; ProjectTimer
-&nbsp; BrushDraw
+&nbsp; FieldCad  
+&nbsp; NotePad  
+&nbsp; FlowChart  
+&nbsp; ProjectTimer  
+&nbsp; BrushDraw  
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
 &nbsp; Block System  
