@@ -9,7 +9,7 @@
 &nbsp; &nbsp; &nbsp;  The flow chart app features basic rectangle operations with text.  
 &nbsp; ProjectTimer  
 &nbsp; &nbsp; &nbsp;  The project timer app features basic project list operations to track the amount of time spend during the day on projects.  
-&nbsp; BrushDraw  
+&nbsp; BrushDraw  [Open page](https://michelvilleneuve.github.io/BrushDraw/)  
 &nbsp; &nbsp; &nbsp;  The paint app features basic brush stroke operations.  
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
