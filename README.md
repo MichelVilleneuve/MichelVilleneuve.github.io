@@ -1,16 +1,10 @@
 ## **Android Applications Projects**  
-&nbsp; CalculatorConversions  [Open page](https://michelvilleneuve.github.io/CalcConv/)  
-&nbsp; &nbsp; &nbsp;  The calculator app features basic math operations and some unit conversions.  
-&nbsp; FieldCad [Open page](https://michelvilleneuve.github.io/FieldCAD/)    
-&nbsp; &nbsp; &nbsp;  The small CAD like app features basic CAD operations to take measurement on site.  
-&nbsp; NotePad [Open page](https://michelvilleneuve.github.io/MyNotePad/)  
-&nbsp; &nbsp; &nbsp;  The note app features basic note taking operations.  
+&nbsp; CalculatorConversions   [Open page](https://michelvilleneuve.github.io/CalcConv/)  
+&nbsp; FieldCad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Open page](https://michelvilleneuve.github.io/FieldCAD/)    
+&nbsp; NotePad  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [Open page](https://michelvilleneuve.github.io/MyNotePad/)  
 &nbsp; FlowChart  
-&nbsp; &nbsp; &nbsp;  The flow chart app features basic rectangle operations with text.  
 &nbsp; ProjectTimer  
-&nbsp; &nbsp; &nbsp;  The project timer app features basic project list operations to track the amount of time spend during the day on projects.  
-&nbsp; BrushDraw  [Open page](https://michelvilleneuve.github.io/BrushDraw/)  
-&nbsp; &nbsp; &nbsp;  The paint app features basic brush stroke operations.  
+&nbsp; BrushDraw  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Open page](https://michelvilleneuve.github.io/BrushDraw/)  
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
 &nbsp; Block System  
