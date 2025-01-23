@@ -2,8 +2,8 @@
 &nbsp; CalculatorConversions [View Info](https://michelvilleneuve.github.io/CalcConv/)  
 &nbsp; FieldCad [View Info](https://michelvilleneuve.github.io/FieldCAD/)  
 &nbsp; NotePad  [View Info](https://michelvilleneuve.github.io/MyNotePad/)  
-&nbsp; FlowChart  [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
-&nbsp; ProjectTimer [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
+&nbsp; FlowChart  [View Info](https://michelvilleneuve.github.io/FlowChart/)  
+&nbsp; ProjectTimer [View Info](https://michelvilleneuve.github.io/ProjectTimer/)  
 &nbsp; BrushDraw [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
