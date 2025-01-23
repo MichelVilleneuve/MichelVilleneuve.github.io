@@ -1,6 +1,6 @@
 ## **Android Applications Projects**  
-&nbsp; CalculatorConversions <div align="right">[View Info](https://michelvilleneuve.github.io/CalcConv/)</div>  
-&nbsp; FieldCad <div align="right">[View Info](https://michelvilleneuve.github.io/FieldCAD/)</div>  
+&nbsp; CalculatorConversions <div dir="rtl">[View Info](https://michelvilleneuve.github.io/CalcConv/)</div>  
+&nbsp; FieldCad <div dir="rtl">[View Info](https://michelvilleneuve.github.io/FieldCAD/)</div>  
 &nbsp; NotePad  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;[View Info](https://michelvilleneuve.github.io/MyNotePad/)  
 &nbsp; FlowChart  
 &nbsp; ProjectTimer  
