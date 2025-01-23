@@ -1,10 +1,10 @@
 ## **Android Applications Projects**  
-&nbsp; CalculatorConversions <div dir="rtl">[View Info](https://michelvilleneuve.github.io/CalcConv/)</div>  
-&nbsp; FieldCad <div dir="rtl">[View Info](https://michelvilleneuve.github.io/FieldCAD/)</div>  
-&nbsp; NotePad  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;[View Info](https://michelvilleneuve.github.io/MyNotePad/)  
-&nbsp; FlowChart  
-&nbsp; ProjectTimer  
-&nbsp; BrushDraw  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
+&nbsp; CalculatorConversions [View Info](https://michelvilleneuve.github.io/CalcConv/)  
+&nbsp; FieldCad [View Info](https://michelvilleneuve.github.io/FieldCAD/)  
+&nbsp; NotePad  [View Info](https://michelvilleneuve.github.io/MyNotePad/)  
+&nbsp; FlowChart  [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
+&nbsp; ProjectTimer [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
+&nbsp; BrushDraw [View Info](https://michelvilleneuve.github.io/BrushDraw/)  
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
 &nbsp; Block System  
