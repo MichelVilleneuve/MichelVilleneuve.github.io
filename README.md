@@ -16,3 +16,4 @@
 
 ## **Inventor Add-Ons** - (macros)  
 &nbsp; Steel Shape for 2D Sketch  
+Steel Shape Macro [View Info](https://inventor-add-on.github.io/SteelShape-Macro/)  
