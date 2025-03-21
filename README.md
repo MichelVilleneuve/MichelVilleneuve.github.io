@@ -1,5 +1,5 @@
 ## **Android Applications Projects**  
-&nbsp; CalculatorConversions [View Info](https://michelvilleneuve.github.io/CalcConv/)  
+&nbsp; CalculatorConversions (https://michelvilleneuve.github.io/CalcConv/)  
 &nbsp; FieldCad [View Info](https://michelvilleneuve.github.io/FieldCAD/)  
 &nbsp; NotePad  [View Info](https://michelvilleneuve.github.io/MyNotePad/)  
 &nbsp; FlowChart  [View Info](https://michelvilleneuve.github.io/FlowChart/)  
