@@ -1,9 +1,9 @@
 ## **Android Applications Projects**  
 &nbsp; [CalculatorConversions](https://michelvilleneuve.github.io/CalcConv/)  
-<img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />
+<img src = "Images/CalcConv.jpg" width="100" />
 
 &nbsp; [UnitsCalculator]()  
-<img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />
+<img src = "/Images/CalcConv.jpg" width="100" />
 
 &nbsp; [FieldCad](https://michelvilleneuve.github.io/FieldCAD/)  
 <img src = "https://michelvilleneuve.github.io/FieldCAD/FieldCAD.jpg" width="100" />  
