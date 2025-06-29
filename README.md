@@ -6,13 +6,13 @@
 <img src = "/Images/UnitsCalculator.jpg" width="100" />
 
 &nbsp; [FieldCad](https://michelvilleneuve.github.io/FieldCAD/)  
-<img src = "https://michelvilleneuve.github.io/FieldCAD/FieldCAD.jpg" width="100" />  
+<img src = "/Images/FieldCAD.jpg" width="100" />  
 
 &nbsp; [NotePad](https://michelvilleneuve.github.io/MyNotePad/)  
-<img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />  
+<img src = "/Images/NotePad.jpg" width="100" />  
 
 &nbsp; [FlowChart](https://michelvilleneuve.github.io/FlowChart/)  
-<img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />  
+<img src = "/Images/FlowChart.jpg" width="100" />  
 
 &nbsp; [ProjectTimer](https://michelvilleneuve.github.io/ProjectTimer/)  
 <img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />  
