@@ -16,11 +16,11 @@
    <a href="https://michelvilleneuve.github.io/FlowChart/">
     <img src="Images/FlowChart.jpg" width="100"/>
   </a>
-   <a href="https://michelvilleneuve.github.io/UnitsCalculator/">
-    <img src="Images/CalcConv.jpg" width="100"/>
+   <a href="https://michelvilleneuve.github.io/BrushDraw/">
+    <img src="Images/BrushDraw" width="100"/>
   </a>
-   <a href="https://michelvilleneuve.github.io/UnitsCalculator/">
-    <img src="Images/CalcConv.jpg" width="100"/>
+   <a href="https://michelvilleneuve.github.io/CyclingTracker/">
+    <img src="Images/CyclingTracker.jpg" width="100"/>
   </a>
 </p>
 
