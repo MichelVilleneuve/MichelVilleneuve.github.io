@@ -1,28 +1,56 @@
 ## **Android Applications Projects**
 
 <p float="left">
-  <a href="https://michelvilleneuve.github.io/CalcConv/">
-    <img src="Images/CalcConv.jpg" width="100"/>
-  </a>
-  <a href="https://michelvilleneuve.github.io/UnitsCalculator/">
-    <img src="Images/UnitsCalculator.jpg" width="100"/>
-  </a>
-  <a href="https://michelvilleneuve.github.io/FieldCAD/">
-    <img src="Images/FieldCAD.jpg" width="100"/>
-  </a>
-  <a href="https://michelvilleneuve.github.io//NotePad/">
-    <img src="Images/NotePad.jpg" width="100"/>
-  </a>
-   <a href="https://michelvilleneuve.github.io/FlowChart/">
-    <img src="Images/FlowChart.jpg" width="100"/>
-  </a>
-   <a href="https://michelvilleneuve.github.io/BrushDraw/">
-    <img src="Images/BrushDraw.png" width="100"/>
-  </a>
-   <a href="https://michelvilleneuve.github.io/CyclingTracker/">
-    <img src="Images/CyclingTracker.png" width="100"/>
-  </a>
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/CalcConv/">
+      <img src="Images/CalcConv.jpg" width="100"/>
+    </a>
+    <figcaption>CalcConv</figcaption>
+  </figure>
+
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/UnitsCalculator/">
+      <img src="Images/UnitsCalculator.jpg" width="100"/>
+    </a>
+    <figcaption>UnitsCalculator</figcaption>
+  </figure>
+
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/FieldCAD/">
+      <img src="Images/FieldCAD.jpg" width="100"/>
+    </a>
+    <figcaption>FieldCAD</figcaption>
+  </figure>
+
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/NotePad/">
+      <img src="Images/NotePad.jpg" width="100"/>
+    </a>
+    <figcaption>NotePad</figcaption>
+  </figure>
+
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/FlowChart/">
+      <img src="Images/FlowChart.jpg" width="100"/>
+    </a>
+    <figcaption>FlowChart</figcaption>
+  </figure>
+
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/BrushDraw/">
+      <img src="Images/BrushDraw.png" width="100"/>
+    </a>
+    <figcaption>BrushDraw</figcaption>
+  </figure>
+
+  <figure style="display:inline-block; margin: 10px; text-align: center;">
+    <a href="https://michelvilleneuve.github.io/CyclingTracker/">
+      <img src="Images/CyclingTracker.png" width="100"/>
+    </a>
+    <figcaption>CyclingTracker</figcaption>
+  </figure>
 </p>
+
 
 
 
