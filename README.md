@@ -20,7 +20,7 @@
     <img src="Images/BrushDraw" width="100"/>
   </a>
    <a href="https://michelvilleneuve.github.io/CyclingTracker/">
-    <img src="Images/CyclingTracker.jpg" width="100"/>
+    <img src="Images/CyclingTracker.png" width="100"/>
   </a>
 </p>
 
