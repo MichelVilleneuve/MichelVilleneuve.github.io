@@ -17,7 +17,7 @@
     <img src="Images/FlowChart.jpg" width="100"/>
   </a>
    <a href="https://michelvilleneuve.github.io/BrushDraw/">
-    <img src="Images/BrushDraw" width="100"/>
+    <img src="Images/BrushDraw.png" width="100"/>
   </a>
    <a href="https://michelvilleneuve.github.io/CyclingTracker/">
     <img src="Images/CyclingTracker.png" width="100"/>
