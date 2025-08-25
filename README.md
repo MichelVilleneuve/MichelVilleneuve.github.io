@@ -1,24 +1,29 @@
-## **Android Applications Projects**  
-&nbsp; [CalculatorConversions](https://michelvilleneuve.github.io/CalcConv/)  
-<img src = "Images/CalcConv.jpg" width="100" />
+## **Android Applications Projects**
 
-&nbsp; [UnitsCalculator]()  
-<img src = "/Images/UnitsCalculator.jpg" width="100" />
+<p float="left">
+  <a href="https://michelvilleneuve.github.io/CalcConv/">
+    <img src="Images/CalcConv.jpg" width="100"/>
+  </a>
+  <a href="#">
+    <img src="Images/UnitsCalculator.jpg" width="100"/>
+  </a>
+  <a href="https://michelvilleneuve.github.io/FieldCAD/">
+    <img src="Images/FieldCAD.jpg" width="100"/>
+  </a>
+  <a href="https://michelvilleneuve.github.io/MyNotePad/">
+    <img src="Images/NotePad.jpg" width="100"/>
+  </a>
+  <a href="https://michelvilleneuve.github.io/FlowChart/">
+    <img src="Images/FlowChart.jpg" width="100"/>
+  </a>
+  <a href="https://michelvilleneuve.github.io/ProjectTimer/">
+    <img src="https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100"/>
+  </a>
+  <a href="https://michelvilleneuve.github.io/BrushDraw/">
+    <img src="https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100"/>
+  </a>
+</p>
 
-&nbsp; [FieldCad](https://michelvilleneuve.github.io/FieldCAD/)  
-<img src = "/Images/FieldCAD.jpg" width="100" />  
-
-&nbsp; [NotePad](https://michelvilleneuve.github.io/MyNotePad/)  
-<img src = "/Images/NotePad.jpg" width="100" />  
-
-&nbsp; [FlowChart](https://michelvilleneuve.github.io/FlowChart/)  
-<img src = "/Images/FlowChart.jpg" width="100" />  
-
-&nbsp; [ProjectTimer](https://michelvilleneuve.github.io/ProjectTimer/)  
-<img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />  
-
-&nbsp; [BrushDraw](https://michelvilleneuve.github.io/BrushDraw/)  
-<img src = "https://michelvilleneuve.github.io/CalcConv/CalcConv.jpg" width="100" />  
 
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
