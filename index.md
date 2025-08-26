@@ -4,8 +4,6 @@ title: MichelVilleneuve's Projects
 ---
 <link rel="stylesheet" href="/assets/css/style.css">
 
-
-
 <div class="gallery-container">
  <figure class="gallery-item">
         <a href="https://michelvilleneuve.github.io/">
