@@ -121,8 +121,5 @@
         </figure>
     </div>
 
-    <footer>
-        <p>&copy; 2025 MichelVilleneuve</p>
-    </footer>
 </body>
 </html>
