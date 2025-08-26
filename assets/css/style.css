@@ -11,13 +11,13 @@ body {
     flex-wrap: wrap;
     justify-content: center; /* Center items horizontally */
     gap: 10px;
-    max-width: 960px; /* Limit the width of the gallery */
+    max-width: 1000px; /* Limit the width of the gallery */
     margin: 0 auto; /* Center the gallery on the page */
 }
 
 .gallery-item {
     text-align: center;
-    width: 100px; /* Slightly larger for better spacing */
+    width: 180px; /* Slightly larger for better spacing */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
