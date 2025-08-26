@@ -2,7 +2,7 @@
 
 ```html
 <p align="center">
-  <a href="https://michelvilleneuve.github.io/CalcConv/">
+  <a href="https://michelvilleneuve.github.io/">
     <img src="Images/CalcConv.jpg" alt="CalcConv" width="150">
   </a>
   <a href="https://michelvilleneuve.github.io/UnitsCalculator/">
