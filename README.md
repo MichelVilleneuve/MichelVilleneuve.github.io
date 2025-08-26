@@ -1,5 +1,6 @@
 ## **Android Applications Projects**
 
+```html
 <p align="center">
   <a href="https://michelvilleneuve.github.io/CalcConv/">
     <img src="Images/CalcConv.jpg" alt="CalcConv" width="150">
@@ -27,6 +28,7 @@
 <p align="center">
   CalcConv | UnitsCalculator | FieldCAD | NotePad | FlowChart | BrushDraw | CyclingTracker
 </p>
+```
 
 
 ## **AutoCAD Add-Ons** - (VisualLisp)
