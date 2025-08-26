@@ -9,13 +9,25 @@ body {
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center items horizontally */
+    gap: 10px;
+    max-width: 960px; /* Limit the width of the gallery */
+    margin: 0 auto; /* Center the gallery on the page */
+    display: grid;
     gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    max-width: 960px;  /* limit gallery width */
+    margin: 0 auto;    /* center the gallery */
 }
 
 .gallery-item {
-    flex: 1 1 150px;  /* grow, shrink, base width */
-    max-width: 200px; /* optional cap so they don’t get huge */
+    text-align: center;
+    width: 180px; /* Slightly larger for better spacing */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    padding: 8px;
 }
 
 .gallery-item img {
