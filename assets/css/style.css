@@ -7,19 +7,15 @@ body {
 }
 
 .gallery-container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    max-width: 960px;  /* limit gallery width */
-    margin: 0 auto;    /* center the gallery */
 }
 
 .gallery-item {
-    text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 8px;
+    flex: 1 1 150px;  /* grow, shrink, base width */
+    max-width: 200px; /* optional cap so they don’t get huge */
 }
 
 .gallery-item img {
