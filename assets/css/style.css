@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center items horizontally */
-    gap: 20px;
+    gap: 10px;
     max-width: 960px; /* Limit the width of the gallery */
     margin: 0 auto; /* Center the gallery on the page */
 }
