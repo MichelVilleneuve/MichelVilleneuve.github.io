@@ -4,8 +4,7 @@ title: MichelVilleneuve's Projects
 ---
 <link rel="stylesheet" href="/assets/css/style.css">
 
-<h1>MichelVilleneuve's Projects</h1>
-<p>A collection of interactive tools and applications.</p>
+
 
 <div class="gallery-container">
  <figure class="gallery-item">
