@@ -1,9 +1,6 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MichelVilleneuve's Projects</title>
     <style>
         body {
             font-family: sans-serif;
@@ -66,9 +63,7 @@
         }
     </style>
 </head>
-<body>
-    <h1>MichelVilleneuve's Projects</h1>
-    <p>A collection of interactive tools and applications.</p>
+<body
 
     <div class="gallery-container">
         <figure class="gallery-item">
