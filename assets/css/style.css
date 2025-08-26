@@ -16,12 +16,8 @@ body {
 }
 
 .gallery-item {
-    text-align: center;
-    width: 150px; /* Slightly larger for better spacing */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    flex: 1 1 150px;  /* grow, shrink, base width */
+    max-width: 200px;
 }
 
 .gallery-item img {
