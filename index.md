@@ -40,13 +40,13 @@
             transition: transform 0.3s ease; /* Add a smooth transition */
         }
 
-        .gallery-item img:hover {
+        .gallery-item img: hover {
             transform: scale(1.05); /* Slightly zoom on hover */
         }
 
         .gallery-item a {
             text-decoration: none;
-            color: inherit;
+            colour: inherit;
         }
 
         .gallery-item figcaption {
