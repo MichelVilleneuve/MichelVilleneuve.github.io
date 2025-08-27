@@ -1,25 +1,35 @@
 /* ===== Site Header (Title + Logo) ===== */
 .site-header {
     display: flex;
-    align-items: center;   /* vertically center logo & title */
-    justify-content: center; /* center them horizontally (use flex-start for left) */
-    gap: 15px; /* space between logo and title */
-    margin-bottom: 30px; /* space under header */
+    flex-direction: column; /* stack logo, title, description */
+    align-items: center;    /* center horizontally */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .site-logo {
-    max-width: 80px;   /* adjust logo size */
+    max-width: 60px;  /* smaller logo */
     height: auto;
-    border-radius: 10px; /* optional: rounded logo */
+    margin-bottom: 10px;
 }
 
 .site-title {
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 1.5em;   /* smaller title */
+    margin: 0;
     color: #222;
-    margin: 0; /* remove default spacing */
-    text-align: center;
 }
+
+.site-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-description {
+    font-size: 1em;
+    color: #555;
+    margin-top: 5px;
+}
+
 
 /* ===== Base Body Styles ===== */
 body {
