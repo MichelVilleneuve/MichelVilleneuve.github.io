@@ -11,7 +11,7 @@ title: MichelVilleneuve's Projects
       <div class="img-container">
         <img src="Images/CyclingTracker.png" alt="CyclingTracker">
         <div class="hover-note">
-          <strong>Application Features:</strong>
+          <strong>Features:</strong>
           <ul>
             <li>Distance</li>
             <li>Road Slope</li>
