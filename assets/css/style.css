@@ -41,23 +41,25 @@ body {
 }
 
 /* ===== Gallery Styles ===== */
-.img-container {
-  position: relative; /* this makes hover-note relative to the image */
-  overflow: hidden;
-  display: inline-block;
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* space between images */
 }
 
 .gallery-item {
-    flex: 1 1 200px;  /* grow, shrink, base width */
+    flex: 1 1 200px; /* grow, shrink, base width */
     max-width: 200px;
 }
 
-.img-container img {
-  max-width: 75%;
-  display: block;
-  transition: transform 0.4s ease;
-  border-radius: 5px;
+/* Make the img-container fill the gallery-item */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  display: block; /* full width of gallery-item */
 }
+
 
 .gallery-item img:hover {
     transform: scale(2.05); /* Slightly zoom on hover */
