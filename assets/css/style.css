@@ -77,6 +77,11 @@ body {
     transform: scale(2.05); /* Slightly zoom on hover */
 }
 
+.img-container {
+    position: relative;   /* anchor hover-note to this box */
+    display: inline-block;
+    overflow: hidden;     /* optional: hides note outside the image */
+}
 /* Overlay note */
 .hover-note {
     position: absolute;
