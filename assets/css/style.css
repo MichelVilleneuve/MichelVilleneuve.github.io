@@ -68,7 +68,7 @@ body {
 .img-container {
     position: relative;   /* anchor hover-note to this box */
     display: inline-block;
-    overflow: hidden;     /* optional: hides note outside the image */
+   /* overflow: hidden;     /* optional: hides note outside the image */
 }
 
 .gallery-item img {
