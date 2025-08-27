@@ -49,7 +49,6 @@ body {
 }
 
 /* ===== Gallery Styles ===== */
-/* ===== Gallery Styles ===== */
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -124,9 +123,6 @@ body {
         gap: 10px;
     }
 
-    .gallery-container {
-        justify-content: flex-start; /* Left align on smaller screens */
-    }
     .gallery-item {
         width: 100%; /* Full width on small screens */
     }
