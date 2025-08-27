@@ -66,22 +66,35 @@ body {
     transform: scale(2.05); /* Slightly zoom on hover */
 }
 
-/* Hidden note box inside the image */
 .hover-note {
   position: absolute;
   bottom: 0; 
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+  background: rgba(0, 0, 0, 0.8); /* darker background for readability */
   color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-size: 0.9em;
+  padding: 12px;
+  font-size: 0.85em;
+  text-align: left;
+  max-height: 70%;  /* prevent it from covering the whole image */
+  overflow-y: auto; /* scroll if list gets long */
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 0 0 5px 5px;
 }
 
-/* Show the note when hovering */
+/* Style list inside the note */
+.hover-note ul {
+  margin: 8px 0 0 15px;
+  padding: 0;
+}
+
+.hover-note li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* Show note on hover */
 .gallery-item:hover .hover-note {
   opacity: 1;
 }
