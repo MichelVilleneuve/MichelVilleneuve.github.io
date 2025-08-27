@@ -68,22 +68,25 @@ body {
 
 .hover-note {
   position: absolute;
-  bottom: 0; 
+  bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8); /* darker background for readability */
+  background: rgba(0,0,0,0.8);
   color: #fff;
   padding: 12px;
   font-size: 0.85em;
   text-align: left;
-  max-height: 70%;  /* prevent it from covering the whole image */
-  overflow-y: auto; /* scroll if list gets long */
+  max-height: 70%;
+  overflow-y: auto;
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 0 0 5px 5px;
 }
 
-/* Style list inside the note */
+.img-container:hover .hover-note {
+  opacity: 1;
+}
+
 .hover-note ul {
   margin: 8px 0 0 15px;
   padding: 0;
@@ -92,11 +95,6 @@ body {
 .hover-note li {
   margin-bottom: 4px;
   line-height: 1.4;
-}
-
-/* Show note on hover */
-.gallery-item:hover .hover-note {
-  opacity: 1;
 }
 
 .gallery-item a {
