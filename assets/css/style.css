@@ -1,11 +1,6 @@
-
 /* ===== Site Header (Title + Logo) ===== */
 .site-header {
     display: flex;
-    align-items: center;   /* vertically center logo & title */
-    justify-content: center; /* center them horizontally (use flex-start for left) */
-    gap: 15px; /* space between logo and title */
-    margin-bottom: 30px; /* space under header */
     flex-direction: column; /* stack logo, title, description */
     align-items: center;    /* center horizontally */
     text-align: center;
@@ -13,32 +8,29 @@
 }
 
 .site-logo {
-    max-width: 80px;   /* adjust logo size */
-    max-width: 60px;  /* smaller logo */
+    max-width: 50px;  /* smaller logo */
     height: auto;
-    border-radius: 10px; /* optional: rounded logo */
     margin-bottom: 10px;
 }
 
 .site-title {
-    font-size: 2em;
-    font-weight: bold;
-    font-size: 1.5em;   /* smaller title */
+    font-size: 1.0em;   /* smaller title */
     margin: 0;
     color: #222;
-    margin: 0; /* remove default spacing */
-    text-align: center;
 }
 
 .site-title a {
     text-decoration: none;
     color: inherit;
 }
+
 .site-description {
     font-size: 1em;
     color: #555;
     margin-top: 5px;
 }
+
+
 /* ===== Base Body Styles ===== */
 body {
     font-family: sans-serif;
@@ -54,67 +46,76 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+.img-container {
+  position: relative; /* this makes hover-note relative to the image */
+  overflow: hidden;
+  display: inline-block;
 }
 
 .gallery-item {
-    flex: 1 1 200px;   /* flexible grid cell */
+    flex: 1 1 200px;  /* grow, shrink, base width */
     max-width: 200px;
-    position: relative; /* needed for overlay note */
 }
 
-/* Ensure we have a wrapper around the image */
-.img-container {
-    position: relative;
-    overflow: hidden;
+.gallery-item img {
+    max-width: 75%;
+    height: auto;
     display: block;
-    width: 100%;
-}
-
-/* Images inside container */
-.img-container img {
-    width: 100%;      /* fill container */
-    height: auto;     /* keep aspect ratio */
-    display: block;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
     margin: 0 auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Add a smooth transition */
+.img-container img {
+  max-width: 75%;
+  display: block;
+  transition: transform 0.4s ease;
+  border-radius: 5px;
 }
 
-/* Scale on hover */
-.img-container:hover img {
-    transform: scale(1.2);
+.gallery-item img:hover {
+    transform: scale(2.05); /* Slightly zoom on hover */
 }
 
-/* Overlay note */
 .hover-note {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 8px;
-    font-size: 0.85em;
-    text-align: left;
-    max-height: 70%;
-    overflow-y: auto;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 0 0 5px 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 12px;
+  font-size: 0.85em;
+  text-align: left;
+  max-height: 70%;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 5px 5px;
 }
 
 .img-container:hover .hover-note {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Caption */
+.hover-note ul {
+  margin: 8px 0 0 15px;
+  padding: 0;
+}
+
+.hover-note li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.gallery-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .gallery-item figcaption {
     margin-top: 10px;
     font-size: 1em;
     color: #555;
-    text-align: center;
 }
-
 
 /* ===== Responsive adjustments ===== */
 @media (max-width: 600px) {
@@ -123,8 +124,10 @@ body {
         gap: 10px;
     }
 
+    .gallery-container {
+        justify-content: flex-start; /* Left align on smaller screens */
+    }
     .gallery-item {
         width: 100%; /* Full width on small screens */
     }
 }
-
