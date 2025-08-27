@@ -1,3 +1,27 @@
+/* ===== Site Header (Title + Logo) ===== */
+.site-header {
+    display: flex;
+    align-items: center;   /* vertically center logo & title */
+    justify-content: center; /* center them horizontally (use flex-start for left) */
+    gap: 15px; /* space between logo and title */
+    margin-bottom: 30px; /* space under header */
+}
+
+.site-logo {
+    max-width: 80px;   /* adjust logo size */
+    height: auto;
+    border-radius: 10px; /* optional: rounded logo */
+}
+
+.site-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #222;
+    margin: 0; /* remove default spacing */
+    text-align: center;
+}
+
+/* ===== Base Body Styles ===== */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -6,6 +30,7 @@ body {
     color: #333;
 }
 
+/* ===== Gallery Styles ===== */
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -42,8 +67,13 @@ body {
     color: #555;
 }
 
-/* Responsive adjustments */
+/* ===== Responsive adjustments ===== */
 @media (max-width: 600px) {
+    .site-header {
+        flex-direction: column; /* stack logo over title on small screens */
+        gap: 10px;
+    }
+
     .gallery-container {
         justify-content: flex-start; /* Left align on smaller screens */
     }
