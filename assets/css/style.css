@@ -77,6 +77,28 @@ body {
     transform: scale(2.05); /* Slightly zoom on hover */
 }
 
+/* Overlay note */
+.hover-note {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 8px;
+    font-size: 0.85em;
+    text-align: left;
+    max-height: 70%;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 5px 5px;
+}
+
+.img-container:hover .hover-note {
+    opacity: 1;
+}
+
 .gallery-item a {
     text-decoration: none;
     color: inherit;
