@@ -51,11 +51,19 @@ body {
 }
 
 /* ===== Gallery Styles ===== */
-.gallery-container {
+/* .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}*/
+
+.gallery-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    max-width: 960px;  /* limit gallery width */
+    margin: 0 auto;    /* center the gallery */
 }
 
 .gallery-item {
