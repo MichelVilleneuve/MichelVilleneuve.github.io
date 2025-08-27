@@ -8,13 +8,13 @@
 }
 
 .site-logo {
-    max-width: 60px;  /* smaller logo */
+    max-width: 50px;  /* smaller logo */
     height: auto;
     margin-bottom: 10px;
 }
 
 .site-title {
-    font-size: 1.5em;   /* smaller title */
+    font-size: 1.0em;   /* smaller title */
     margin: 0;
     color: #222;
 }
