@@ -49,6 +49,7 @@ body {
 }
 
 /* ===== Gallery Styles ===== */
+/* ===== Gallery Styles ===== */
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -57,21 +58,32 @@ body {
 }
 
 .gallery-item {
-    flex: 1 1 200px;  /* grow, shrink, base width */
+    flex: 1 1 200px;   /* flexible grid cell */
     max-width: 200px;
+    position: relative; /* needed for overlay note */
 }
 
-.gallery-item img {
-    max-width: 75%;
-    height: auto;
+/* Ensure we have a wrapper around the image */
+.img-container {
+    position: relative;
+    overflow: hidden;
     display: block;
-    margin: 0 auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease; /* Add a smooth transition */
+    width: 100%;
 }
 
-.gallery-item img:hover {
-    transform: scale(2.05); /* Slightly zoom on hover */
+/* Images inside container */
+.img-container img {
+    width: 100%;      /* fill container */
+    height: auto;     /* keep aspect ratio */
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+/* Scale on hover */
+.img-container:hover img {
+    transform: scale(1.2);
 }
 
 /* Overlay note */
@@ -96,16 +108,14 @@ body {
     opacity: 1;
 }
 
-.gallery-item a {
-    text-decoration: none;
-    color: inherit;
-}
-
+/* Caption */
 .gallery-item figcaption {
     margin-top: 10px;
     font-size: 1em;
     color: #555;
+    text-align: center;
 }
+
 
 /* ===== Responsive adjustments ===== */
 @media (max-width: 600px) {
