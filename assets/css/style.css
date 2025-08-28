@@ -59,6 +59,7 @@ body {
 
 .img-container {
     position: relative;
+    z-index: 1;
     width: 160px;
     height: 280px;
     overflow: visible;
@@ -80,7 +81,7 @@ body {
 .img-container.hovered img,
 .img-container.active img {
     transform: scale(2.5);
-    z-index: 2;
+    z-index: 10;
 }
 
 /* Instruction text */
