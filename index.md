@@ -114,21 +114,40 @@ let topZ = 10;
 
 document.querySelectorAll('.img-container').forEach(container => {
 
+  const instruction = container.querySelector('.click-instruction');
+
+  // Move instruction with mouse
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    instruction.style.left = `${offsetX + 10}px`;   // slightly right of cursor
+    instruction.style.top = `${offsetY + 10}px`;    // slightly below cursor
+  });
+
   container.addEventListener('mouseenter', () => {
     container.classList.add('hovered');
-    container.style.zIndex = topZ++; // bring hovered image on top
+    container.style.zIndex = topZ++; 
+    if (!container.classList.contains('active')) {
+      instruction.textContent = 'Click to see full features';
+      instruction.style.opacity = 1;
+    }
   });
 
   container.addEventListener('mouseleave', () => {
     container.classList.remove('hovered');
     container.style.zIndex = container.classList.contains('active') ? topZ++ : 1;
-    container.classList.remove('active'); // hide features box
+    instruction.style.opacity = 0;
+    container.classList.remove('active'); 
   });
 
   container.addEventListener('click', (e) => {
     e.stopPropagation();
     container.classList.toggle('active');
     container.style.zIndex = container.classList.contains('active') ? topZ++ : 1;
+    instruction.textContent = container.classList.contains('active') ? 
+      'Click to hide full features': 'Click to see full features';
+    instruction.style.opacity = 1; // make sure it's visible after click
   });
 
 });
