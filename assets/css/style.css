@@ -90,20 +90,20 @@ body {
 /* Features box */
 .features-box {
     position: absolute;
-    top: 50%;
+    bottom: -10px;       /* move below the image */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     background: rgba(0,0,0,0.85);
     color: #fff;
-    padding: 10px 14px;
+    padding: 10px 16px;
     font-size: 0.8em;
     border-radius: 8px;
-    max-width: 90%;
+    min-width: 140px;    /* keep box wider */
+    max-width: 200px;    /* avoid being too wide */
     opacity: 0;
+    transition: opacity 0.3s ease;
     pointer-events: none;
     text-align: left;
-    transition: opacity 0.3s ease;
-    z-index: 3;
 }
 
 /* Show only on hover */
