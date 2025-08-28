@@ -99,8 +99,7 @@ body {
     font-size: 0.85em;
     line-height: 1.4em;
     border-radius: 8px;
-    width: 90%;     /* instead of max-width */
-    max-width: none;
+    white-space: nowrap;   /* keep all text on one line */
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: left;
