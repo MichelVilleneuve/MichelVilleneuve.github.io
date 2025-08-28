@@ -66,14 +66,17 @@ body {
 
 .img-container {
     position: relative;
-    display: inline-block;
+    width: 150px;   /* fix image container width */
+    height: 280px;  /* fix height so all boxes align */
     overflow: hidden;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 .img-container img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;   /* keep aspect ratio inside box */
     border-radius: 5px;
     transition: transform 0.4s ease;
 }
@@ -85,18 +88,19 @@ body {
 /* Features box (hidden by default) */
 .features-box {
     position: absolute;
-    bottom: 5px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0,0,0,0.85);
     color: #fff;
     padding: 10px 14px;
-    font-size: 0.85em;
+    font-size: 0.75em;
     border-radius: 8px;
     max-width: 90%;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none; /* avoid blocking hover */
+    text-align: left;
 }
 
 /* Show only when hovering image */
