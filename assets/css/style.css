@@ -88,15 +88,19 @@ body {
 }
 
 .features-box {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 10px 14px;
     font-size: 0.85em;
-    color: #333;
-    margin-top: 8px;
-    text-align: left;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle depth */
+    border-radius: 8px;
+    max-width: 90%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* avoid blocking hover */
 }
 
 .img-container:hover .hover-note {
