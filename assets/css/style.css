@@ -1,32 +1,26 @@
 /* ===== Site Header (Title + Logo) ===== */
 .site-header {
     display: flex;
-    align-items: center;   /* vertically center logo & title */
-    justify-content: center; /* center them horizontally (use flex-start for left) */
-    gap: 15px; /* space between logo and title */
-    margin-bottom: 30px; /* space under header */
-    flex-direction: column; /* stack logo, title, description */
-    align-items: center;    /* center horizontally */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
 .site-logo {
-    max-width: 80px;   /* adjust logo size */
-    max-width: 60px;  /* smaller logo */
+    max-width: 60px;
     height: auto;
-    border-radius: 10px; /* optional: rounded logo */
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .site-title {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
-    font-size: 1.5em;   /* smaller title */
     margin: 0;
     color: #222;
-    margin: 0; /* remove default spacing */
-    text-align: center;
 }
 
 .site-title a {
@@ -40,7 +34,6 @@
     margin-top: 5px;
 }
 
-
 /* ===== Base Body Styles ===== */
 body {
     font-family: sans-serif;
@@ -51,7 +44,7 @@ body {
 }
 
 /* ===== Gallery Styles ===== */
-   .gallery-container {
+.gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -60,15 +53,15 @@ body {
 
 .gallery-item {
     flex: 1 1 150px;
-    max-width: 180px;   /* allow thumbnails a bit wider */
+    max-width: 180px;
     text-align: center;
 }
 
 .img-container {
     position: relative;
-    width: 160px;       /* uniform width */
-    height: 280px;      /* uniform height */
-    overflow: visible;  /* allow zoom to spill outside */
+    width: 160px;
+    height: 280px;
+    overflow: visible;
     border-radius: 5px;
     margin: 0 auto;
     cursor: pointer;
@@ -77,17 +70,20 @@ body {
 .img-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* show whole image without cropping */
+    object-fit: contain;
     border-radius: 5px;
     transition: transform 0.4s ease;
+    z-index: 1;
 }
 
-.img-container:hover img {
+/* Zoom on hover or click */
+.img-container.hovered img,
+.img-container.active img {
     transform: scale(2.5);
-    z-index: 2;          /* keep zoomed image above neighbors */
+    z-index: 2;
 }
 
-/* Features box: hidden by default */
+/* Features box hidden by default */
 .features-box {
     position: absolute;
     top: 50%;
@@ -101,8 +97,8 @@ body {
     opacity: 0;
     pointer-events: none;
     text-align: left;
-    white-space: nowrap;   /* do not wrap text automatically */
-    display: inline-block; /* shrink box to fit content */
+    white-space: normal;
+    max-width: 90%;
     transition: opacity 0.3s ease;
     z-index: 3;
 }
@@ -111,23 +107,6 @@ body {
 .img-container.active .features-box {
     opacity: 1;
     pointer-events: auto;
-}
-
-/* Optional: allow multi-line for lists */
-.features-box ul {
-    white-space: normal;  /* allow wrapping for list items */
-    margin: 0;
-    padding-left: 18px;
-}
-
-/* Show only on hover */
-.img-container:hover .features-box {
-    opacity: 1;
-}
-
-.gallery-item a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .gallery-item figcaption {
@@ -139,14 +118,13 @@ body {
 /* ===== Responsive adjustments ===== */
 @media (max-width: 600px) {
     .site-header {
-        flex-direction: column; /* stack logo over title on small screens */
+        flex-direction: column;
         gap: 10px;
     }
-
     .gallery-container {
-        justify-content: flex-start; /* Left align on smaller screens */
+        justify-content: flex-start;
     }
     .gallery-item {
-        width: 100%; /* Full width on small screens */
+        width: 100%;
     }
 }
