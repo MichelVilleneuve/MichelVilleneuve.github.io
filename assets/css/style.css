@@ -103,6 +103,7 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: left;
+    pointer-events: auto; 
 }
 
 .img-container:hover .hover-note {
