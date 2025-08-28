@@ -8,7 +8,7 @@ title: MichelVilleneuve's Projects
 
   <!-- First app with real features -->
   <figure class="gallery-item">
-    <div class="img-container">
+     <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
       <div class="features-box">
         <strong>Features:</strong>
@@ -30,7 +30,7 @@ title: MichelVilleneuve's Projects
 
   <!-- All the rest with "Coming soon" -->
   <figure class="gallery-item">
-    <div class="img-container">
+     <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
       <div class="features-box">
         <strong>Features:</strong>
@@ -41,7 +41,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container">
+     <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
       <div class="features-box">
         <strong>Features:</strong>
@@ -52,7 +52,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container">
+    <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/FieldCAD.jpg" alt="FieldCAD">
       <div class="features-box">
         <strong>Features:</strong>
@@ -63,7 +63,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container">
+     <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/NotePad.jpg" alt="NotePad">
       <div class="features-box">
         <strong>Features:</strong>
@@ -74,7 +74,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container">
+     <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/FlowChart.jpg" alt="FlowChart">
       <div class="features-box">
         <strong>Features:</strong>
@@ -85,7 +85,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container">
+     <div class="img-container" onclick="toggleFeatures(this)">
       <img src="Images/BrushDraw.png" alt="BrushDraw">
       <div class="features-box">
         <strong>Features:</strong>
