@@ -10,11 +10,7 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
-
-      <!-- Instruction text -->
       <div class="click-instruction">Click to see full features</div>
-
-      <!-- Features box -->
       <div class="features-box">
         <strong>Features:</strong>
         <ul>
@@ -33,7 +29,7 @@ title: MichelVilleneuve's Projects
     <figcaption>CyclingTracker</figcaption>
   </figure>
 
-  <!-- All other apps with "Coming soon" -->
+  <!-- Other apps with "Coming soon" -->
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
@@ -114,22 +110,25 @@ title: MichelVilleneuve's Projects
 
 <!-- ===== JavaScript ===== -->
 <script>
+let topZ = 10;
+
 document.querySelectorAll('.img-container').forEach(container => {
 
-  // Hover zoom
   container.addEventListener('mouseenter', () => {
     container.classList.add('hovered');
+    container.style.zIndex = topZ++; // bring hovered image on top
   });
 
   container.addEventListener('mouseleave', () => {
-    container.classList.remove('hovered'); // remove zoom
-    container.classList.remove('active');  // hide features box
+    container.classList.remove('hovered');
+    container.style.zIndex = container.classList.contains('active') ? topZ++ : 1;
+    container.classList.remove('active'); // hide features box
   });
 
-  // Click to toggle features box
   container.addEventListener('click', (e) => {
     e.stopPropagation();
     container.classList.toggle('active');
+    container.style.zIndex = container.classList.contains('active') ? topZ++ : 1;
   });
 
 });
