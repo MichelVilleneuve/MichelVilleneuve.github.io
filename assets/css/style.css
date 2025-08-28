@@ -68,12 +68,12 @@ body {
 .img-container {
     position: relative;
     display: inline-block;
-    overflow: visible;   /* let zoomed image overflow */
+    overflow: hidden;   /* let zoomed image overflow */
     transition: transform 0.3s ease;
     z-index: 0;
 }
 
-.gallery-item img {
+.img-containe img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -83,7 +83,7 @@ body {
 }
 
 
-.gallery-item img:hover {
+.img-containe:hover img {
     transform: scale(2.05); /* Slightly zoom on hover */
 }
 
@@ -103,7 +103,7 @@ body {
     pointer-events: none; /* avoid blocking hover */
 }
 
-.img-container:hover .hover-note {
+.img-container:hover .features-box {
     opacity: 1;
 }
 
