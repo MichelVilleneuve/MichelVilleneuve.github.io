@@ -82,24 +82,22 @@ body {
     transform: scale(2.0); /* zoom on hover */
 }
 
-/* Overlay textbox */
 .hover-note {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* center the box */
-    background: rgba(0, 0, 0, 0.85);   /* solid dark box */
+    top: 0;     /* cover the whole image */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.75);  /* semi-transparent dark overlay */
     color: #fff;
-    padding: 12px 16px;
+    padding: 12px;
     font-size: 0.85em;
-    line-height: 1.4em;
-    border-radius: 8px;
-    max-width: 80%;       /* keep it narrower than the image */
-    opacity: 0;           /* hidden by default */
-    transition: opacity 0.3s ease;
     text-align: left;
+    opacity: 0;             /* hidden by default */
+    transition: opacity 0.3s ease; /* smooth fade */
+    border-radius: 5px;     /* match image rounding */
+    overflow-y: auto;       /* scroll if content is long */
 }
-
 .img-container:hover .hover-note {
     opacity: 1;   /* fade in */
 }
