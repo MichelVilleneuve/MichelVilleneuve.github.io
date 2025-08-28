@@ -10,6 +10,11 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
+
+      <!-- Instruction text -->
+      <div class="click-instruction">Click to see full features</div>
+
+      <!-- Features box -->
       <div class="features-box">
         <strong>Features:</strong>
         <ul>
@@ -28,10 +33,11 @@ title: MichelVilleneuve's Projects
     <figcaption>CyclingTracker</figcaption>
   </figure>
 
-  <!-- All the rest with "Coming soon" -->
+  <!-- All other apps with "Coming soon" -->
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
+      <div class="click-instruction">Click to see full features</div>
       <div class="features-box">
         <strong>Features:</strong>
         <p>Coming soon...</p>
@@ -43,6 +49,7 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
+      <div class="click-instruction">Click to see full features</div>
       <div class="features-box">
         <strong>Features:</strong>
         <p>Coming soon...</p>
@@ -54,6 +61,7 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/FieldCAD.jpg" alt="FieldCAD">
+      <div class="click-instruction">Click to see full features</div>
       <div class="features-box">
         <strong>Features:</strong>
         <p>Coming soon...</p>
@@ -65,6 +73,7 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/NotePad.jpg" alt="NotePad">
+      <div class="click-instruction">Click to see full features</div>
       <div class="features-box">
         <strong>Features:</strong>
         <p>Coming soon...</p>
@@ -76,6 +85,7 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/FlowChart.jpg" alt="FlowChart">
+      <div class="click-instruction">Click to see full features</div>
       <div class="features-box">
         <strong>Features:</strong>
         <p>Coming soon...</p>
@@ -87,6 +97,7 @@ title: MichelVilleneuve's Projects
   <figure class="gallery-item">
     <div class="img-container">
       <img src="Images/BrushDraw.png" alt="BrushDraw">
+      <div class="click-instruction">Click to see full features</div>
       <div class="features-box">
         <strong>Features:</strong>
         <p>Coming soon...</p>
@@ -101,21 +112,25 @@ title: MichelVilleneuve's Projects
   <p>&copy; 2025 MichelVilleneuve</p>
 </footer>
 
+<!-- ===== JavaScript ===== -->
 <script>
 document.querySelectorAll('.img-container').forEach(container => {
 
+  // Hover zoom
   container.addEventListener('mouseenter', () => {
-    container.classList.add('hovered'); // zoom on hover
+    container.classList.add('hovered');
   });
 
   container.addEventListener('mouseleave', () => {
-    container.classList.remove('hovered'); // remove hover zoom
+    container.classList.remove('hovered'); // remove zoom
     container.classList.remove('active');  // hide features box
   });
 
+  // Click to toggle features box
   container.addEventListener('click', (e) => {
     e.stopPropagation();
-    container.classList.toggle('active'); // toggle features box on click
+    container.classList.toggle('active');
   });
+
 });
 </script>
