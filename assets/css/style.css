@@ -87,23 +87,23 @@ body {
     z-index: 2;          /* keep zoomed image above neighbors */
 }
 
-/* Features box */
+/* Features box hidden by default */
 .features-box {
-    position: absolute;
-    bottom: -10px;       /* move below the image */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.85);
-    color: #fff;
-    padding: 10px 16px;
-    font-size: 0.8em;
-    border-radius: 8px;
-    min-width: 140px;    /* keep box wider */
-    max-width: 200px;    /* avoid being too wide */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 0.8em;
+  border-radius: 8px;
+  max-width: 90%;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  transition: opacity 0.3s ease;
+  z-index: 3;
 }
 
 /* Show only on hover */
