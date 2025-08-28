@@ -8,7 +8,7 @@ title: MichelVilleneuve's Projects
 
   <!-- First app with real features -->
   <figure class="gallery-item">
-     <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
       <div class="features-box">
         <strong>Features:</strong>
@@ -30,7 +30,7 @@ title: MichelVilleneuve's Projects
 
   <!-- All the rest with "Coming soon" -->
   <figure class="gallery-item">
-     <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
       <div class="features-box">
         <strong>Features:</strong>
@@ -41,7 +41,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-     <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
       <div class="features-box">
         <strong>Features:</strong>
@@ -52,7 +52,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/FieldCAD.jpg" alt="FieldCAD">
       <div class="features-box">
         <strong>Features:</strong>
@@ -63,7 +63,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-     <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/NotePad.jpg" alt="NotePad">
       <div class="features-box">
         <strong>Features:</strong>
@@ -74,7 +74,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-     <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/FlowChart.jpg" alt="FlowChart">
       <div class="features-box">
         <strong>Features:</strong>
@@ -85,7 +85,7 @@ title: MichelVilleneuve's Projects
   </figure>
 
   <figure class="gallery-item">
-     <div class="img-container" onclick="toggleFeatures(this)">
+    <div class="img-container">
       <img src="Images/BrushDraw.png" alt="BrushDraw">
       <div class="features-box">
         <strong>Features:</strong>
@@ -100,9 +100,22 @@ title: MichelVilleneuve's Projects
 <footer>
   <p>&copy; 2025 MichelVilleneuve</p>
 </footer>
-<!-- ===== JavaScript ===== -->
+
 <script>
-function toggleFeatures(container) {
-  container.classList.toggle('active');
-}
+document.querySelectorAll('.img-container').forEach(container => {
+
+  container.addEventListener('mouseenter', () => {
+    container.classList.add('hovered'); // zoom on hover
+  });
+
+  container.addEventListener('mouseleave', () => {
+    container.classList.remove('hovered'); // remove hover zoom
+    container.classList.remove('active');  // hide features box
+  });
+
+  container.addEventListener('click', (e) => {
+    e.stopPropagation();
+    container.classList.toggle('active'); // toggle features box on click
+  });
+});
 </script>
