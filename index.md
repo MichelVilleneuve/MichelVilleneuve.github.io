@@ -6,28 +6,27 @@ title: MichelVilleneuve's Projects
 
 <div class="gallery-container">
 
-  <figure class="gallery-item">
-    <a href="https://michelvilleneuve.github.io/">
-      <div class="img-container">
-        <img src="Images/CyclingTracker.png" alt="CyclingTracker">
-        <div class="hover-note">
-          <strong>Features:</strong>
-          <ul>
-            <li>Distance</li>
-            <li>Road Slope</li>
-            <li>Calories</li>
-            <li>Current Time</li>
-            <li>AVG Speed</li>
-            <li>Max Speed</li>
-            <li>Elevation Gain</li>
-            <li>Elevation Loss</li>
-            <li>Elevation Net</li>
-          </ul>
-        </div>
-      </div>
-      <figcaption>CyclingTracker</figcaption>
-    </a>
-  </figure>
+<figure class="gallery-item">
+  <div class="img-container">
+    <img src="Images/CyclingTracker.png" alt="CyclingTracker">
+    <div class="features-box">
+      <strong>Application Features:</strong>
+      <ul>
+        <li>Distance</li>
+        <li>Road Slope</li>
+        <li>Calories</li>
+        <li>Current Time</li>
+        <li>AVG Speed</li>
+        <li>Max Speed</li>
+        <li>Elevation Gain</li>
+        <li>Elevation Loss</li>
+        <li>Elevation Net</li>
+      </ul>
+    </div>
+  </div>
+  <figcaption>CyclingTracker</figcaption>
+</figure>
+
 
   <figure class="gallery-item">
     <a href="https://michelvilleneuve.github.io/">
