@@ -85,22 +85,24 @@ body {
 
 /* Features box hidden by default */
 .features-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.85);
-    color: #fff;
-    padding: 10px 14px;
-    font-size: 0.8em;
-    border-radius: 8px;
-    opacity: 0;
-    pointer-events: none;
-    text-align: left;
-    white-space: normal;
-    max-width: 90%;
-    transition: opacity 0.3s ease;
-    z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 0.8em;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  white-space: normal;          /* allow wrapping if necessary */
+  max-width: 90%;               /* won’t exceed container width */
+  width: max-content;            /* auto width based on text */
+  min-width: 100px;             /* optional: avoid tiny box */
+  transition: opacity 0.3s ease;
+  z-index: 3;
 }
 
 /* Show features box only when clicked */
