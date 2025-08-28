@@ -66,10 +66,11 @@ body {
 
 
 .img-container {
-    position: relative;   /* anchor hover-note to this box */
+    position: relative;
     display: inline-block;
-    overflow: hidden;     /* optional: hides note outside the image */
-   /* overflow: hidden;     /* optional: hides note outside the image */
+    overflow: visible;   /* let zoomed image overflow */
+    transition: transform 0.3s ease;
+    z-index: 0;
 }
 
 .gallery-item img {
