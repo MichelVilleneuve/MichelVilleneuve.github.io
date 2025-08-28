@@ -100,3 +100,9 @@ title: MichelVilleneuve's Projects
 <footer>
   <p>&copy; 2025 MichelVilleneuve</p>
 </footer>
+<!-- ===== JavaScript ===== -->
+<script>
+function toggleFeatures(container) {
+  container.classList.toggle('active');
+}
+</script>
