@@ -110,7 +110,7 @@ title: MichelVilleneuve's Projects
 .img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* show entire image on hover */
   transition: transform 0.4s ease, z-index 0s;
 }
 
