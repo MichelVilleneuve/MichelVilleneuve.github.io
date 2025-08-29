@@ -155,6 +155,7 @@ body { font-family: sans-serif; margin: 0; padding: 20px; background: #f4f4f4; c
 
 <script>
 // App data
+// App data
 const appData = {
   cycling: {
     images: [
@@ -181,28 +182,28 @@ const appData = {
   },
   calcconv: {
     images: ["Images/CalcConv.jpg"],
-    features: `<p>Coming soon...</p>`
-  }
-   unitscalculator = { 
+    features: "<p>Coming soon...</p>"
+  },
+  unitscalculator: { 
     images: ["Images/UnitsCalculator.jpg"], 
     features: "<p>Coming soon...</p>" 
-  }
-fieldcad = { 
+  },
+  fieldcad: { 
     images: ["Images/FieldCAD.jpg"], 
     features: "<p>Coming soon...</p>" 
-}
-notepad = { 
+  },
+  notepad: { 
     images: ["Images/NotePad.jpg"], 
     features: "<p>Coming soon...</p>" 
-}
-flowchart = { 
+  },
+  flowchart: { 
     images: ["Images/FlowChart.jpg"], 
     features: "<p>Coming soon...</p>" 
-}
-brushdraw = { 
+  },
+  brushdraw: { 
     images: ["Images/BrushDraw.png"], 
-    features: "<p>Coming soon...</p>"
-}
+    features: "<p>Coming soon...</p>" 
+  }
 };
 
 let currentApp = null;
