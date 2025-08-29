@@ -7,50 +7,57 @@ title: MichelVilleneuve's Projects
 
 <div class="gallery-container">
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('cycling')">
+    <div class="img-container" onclick="openLightbox('cycling', this)">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>CyclingTracker</figcaption>
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('calcconv')">
+    <div class="img-container" onclick="openLightbox('calcconv', this)">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>CalcConv</figcaption>
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('unitscalc')">
+    <div class="img-container" onclick="openLightbox('unitscalc', this)">
       <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>UnitsCalculator</figcaption>
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('fieldcad')">
+    <div class="img-container" onclick="openLightbox('fieldcad', this)">
       <img src="Images/FieldCAD.jpg" alt="FieldCAD">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>FieldCAD</figcaption>
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('notepad')">
+    <div class="img-container" onclick="openLightbox('notepad', this)">
       <img src="Images/NotePad.jpg" alt="NotePad">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>NotePad</figcaption>
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('flowchart')">
+    <div class="img-container" onclick="openLightbox('flowchart', this)">
       <img src="Images/FlowChart.jpg" alt="FlowChart">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>FlowChart</figcaption>
   </figure>
 
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('brushdraw')">
+    <div class="img-container" onclick="openLightbox('brushdraw', this)">
       <img src="Images/BrushDraw.png" alt="BrushDraw">
+      <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>BrushDraw</figcaption>
   </figure>
@@ -131,6 +138,30 @@ title: MichelVilleneuve's Projects
   text-align: left;
   display: inline-block;
 }
+
+/* ===== Click Instruction Overlay ===== */
+.img-container {
+  position: relative;
+}
+
+.click-instruction {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.img-container:hover .click-instruction {
+  opacity: 1;
+}
 </style>
 
 <script>
@@ -140,7 +171,6 @@ const appData = {
       "Images/CyclingTracker.png",
       "Images/CyclingTracker1.png",
       "Images/CyclingTracker2.png",
-      "Images/CyclingTracker3.png",
       "Images/CyclingTracker3.png"
     ],
     features: `
@@ -152,44 +182,39 @@ const appData = {
       </ul>
     `
   },
-  calcconv: {
-    images: ["Images/CalcConv.jpg"],
-    features: `<p>Coming soon...</p>`
-  },
-  unitscalc: {
-    images: ["Images/UnitsCalculator.jpg"],
-    features: `<p>Coming soon...</p>`
-  },
-  fieldcad: {
-    images: ["Images/FieldCAD.jpg"],
-    features: `<p>Coming soon...</p>`
-  },
-  notepad: {
-    images: ["Images/NotePad.jpg"],
-    features: `<p>Coming soon...</p>`
-  },
-  flowchart: {
-    images: ["Images/FlowChart.jpg"],
-    features: `<p>Coming soon...</p>`
-  },
-  brushdraw: {
-    images: ["Images/BrushDraw.png"],
-    features: `<p>Coming soon...</p>`
-  }
+  calcconv: { images: ["Images/CalcConv.jpg"], features: `<p>Coming soon...</p>` },
+  unitscalc: { images: ["Images/UnitsCalculator.jpg"], features: `<p>Coming soon...</p>` },
+  fieldcad: { images: ["Images/FieldCAD.jpg"], features: `<p>Coming soon...</p>` },
+  notepad: { images: ["Images/NotePad.jpg"], features: `<p>Coming soon...</p>` },
+  flowchart: { images: ["Images/FlowChart.jpg"], features: `<p>Coming soon...</p>` },
+  brushdraw: { images: ["Images/BrushDraw.png"], features: `<p>Coming soon...</p>` }
 };
 
 let currentApp = null;
 let currentIndex = 0;
+let currentInstruction = null;
 
-function openLightbox(app) {
+function openLightbox(app, element) {
   currentApp = app;
   currentIndex = 0;
+  currentInstruction = element.querySelector(".click-instruction");
   document.getElementById("lightbox").style.display = "block";
   showSlide(currentIndex);
+
+  // Change instruction text
+  if (currentInstruction) {
+    currentInstruction.textContent = "Click to hide full features";
+  }
 }
 
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
+
+  // Reset instruction text
+  if (currentInstruction) {
+    currentInstruction.textContent = "Click to see full features";
+    currentInstruction = null;
+  }
 }
 
 function changeSlide(n) {
