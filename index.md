@@ -179,7 +179,7 @@ title: MichelVilleneuve's Projects
 }
 
 .gallery-item figcaption {
-  margin-top: 8px;
+  margin-top: 16px;
   font-size: 1em;
   color: #333;
   display: block;
