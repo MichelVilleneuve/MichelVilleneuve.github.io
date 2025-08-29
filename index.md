@@ -196,7 +196,7 @@ let currentInstruction = null;
 
 function openLightbox(app, element) {
   currentApp = app;
-  currentIndex = 0; // start with features slide
+  currentIndex = 0; // start with features overlay
   currentInstruction = element.querySelector(".click-instruction");
   document.getElementById("lightbox").style.display = "block";
   showSlide(currentIndex);
@@ -205,7 +205,6 @@ function openLightbox(app, element) {
     currentInstruction.textContent = "Click to hide full features";
   }
 }
-
 
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
@@ -228,15 +227,14 @@ function showSlide(index) {
   const featuresBox = document.getElementById("features-box");
 
   if (index === 0) {
-    // Special: show features box overlaying the first image
+    // Slide 0 → show image with features overlay
     img.src = appData[currentApp].images[0];
     featuresBox.style.display = "block";
     featuresBox.innerHTML = appData[currentApp].features;
   } else {
-    // Show normal images, no features
+    // Other slides → normal image, no features
     img.src = appData[currentApp].images[index];
     featuresBox.style.display = "none";
   }
 }
-
 </script>
