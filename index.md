@@ -97,6 +97,7 @@ title: MichelVilleneuve's Projects
 
 .gallery-item {
   text-align: center;
+   margin-bottom: 20px;
 }
 
 .img-container {
@@ -107,7 +108,6 @@ title: MichelVilleneuve's Projects
   border-radius: 5px;
   margin: 0 auto;
   cursor: pointer;
-  z-index: 1;
   transition: z-index 0.2s ease;
 }
 
@@ -118,10 +118,12 @@ title: MichelVilleneuve's Projects
    
 .img-container img {
   width: 100%;
-  height: auto;           /* keep full image visible */
-  object-fit: contain;    /* optional, ensures entire image fits */
+  height: auto;
+  object-fit: contain;
   border-radius: 5px;
   transition: transform 0.4s ease;
+  position: relative;  /* needed for z-index to work */
+  z-index: 1;
 }
 
    .img-container.hovered img,
