@@ -97,7 +97,7 @@ title: MichelVilleneuve's Projects
 
 .gallery-item {
   text-align: center;
-  margin-bottom: 40px; /* extra space for scaled-up images */
+  margin-bottom: 50px; /* extra space for scaled-up images */
   position: relative;
 }
 
