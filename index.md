@@ -183,6 +183,26 @@ const appData = {
     images: ["Images/CalcConv.jpg"],
     features: `<p>Coming soon...</p>`
   }
+   unitscalculator = { 
+    images: ["Images/UnitsCalculator.jpg"], 
+    features: "<p>Coming soon...</p>" 
+  }
+fieldcad = { 
+    images: ["Images/FieldCAD.jpg"], 
+    features: "<p>Coming soon...</p>" 
+}
+notepad = { 
+    images: ["Images/NotePad.jpg"], 
+    features: "<p>Coming soon...</p>" 
+}
+flowchart = { 
+    images: ["Images/FlowChart.jpg"], 
+    features: "<p>Coming soon...</p>" 
+}
+brushdraw = { 
+    images: ["Images/BrushDraw.png"], 
+    features: "<p>Coming soon...</p>"
+}
 };
 
 let currentApp = null;
