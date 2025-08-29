@@ -95,14 +95,17 @@ title: MichelVilleneuve's Projects
   gap: 10px 10px;
 }
 
-.gallery-item { flex: 1 1 150px; max-width: 180px; text-align: center; }
+.gallery-item {
+  text-align: center;
+}
 
 .img-container {
   position: relative;
   width: 160px;
   height: 280px;
-  overflow: visible;   /* <-- allow image to scale outside */
+  overflow: visible;  /* allow image to scale beyond container */
   border-radius: 5px;
+  margin: 0 auto;
   cursor: pointer;
   z-index: 1;
   transition: z-index 0.2s ease;
@@ -126,6 +129,14 @@ title: MichelVilleneuve's Projects
   transform: scale(2.0);
 }
 
+   .gallery-item figcaption {
+  margin-top: 6px;   /* spacing below image */
+  font-size: 1em;
+  color: #555;
+  position: relative; /* ensure it stays below the image */
+  z-index: 1;         /* captions stay under scaled image */
+}
+   
 .click-instruction {
   position: absolute;
   bottom: 8px;
