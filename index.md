@@ -2,7 +2,6 @@
 layout: default
 title: MichelVilleneuve's Projects
 ---
-
 <link rel="stylesheet" href="/assets/css/style.css">
 
 <div class="site-header">
@@ -10,10 +9,9 @@ title: MichelVilleneuve's Projects
 </div>
 
 <div class="gallery-container">
-
   <!-- CyclingTracker -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('cycling')">
+    <div class="img-container" onclick="openLightbox('cycling', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -22,7 +20,7 @@ title: MichelVilleneuve's Projects
 
   <!-- CalcConv -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('calcconv')">
+    <div class="img-container" onclick="openLightbox('calcconv', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -31,7 +29,7 @@ title: MichelVilleneuve's Projects
 
   <!-- UnitsCalculator -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('unitscalculator')">
+    <div class="img-container" onclick="openLightbox('unitscalculator', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -40,7 +38,7 @@ title: MichelVilleneuve's Projects
 
   <!-- FieldCAD -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('fieldcad')">
+    <div class="img-container" onclick="openLightbox('fieldcad', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/FieldCAD.jpg" alt="FieldCAD">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -49,7 +47,7 @@ title: MichelVilleneuve's Projects
 
   <!-- NotePad -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('notepad')">
+    <div class="img-container" onclick="openLightbox('notepad', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/NotePad.jpg" alt="NotePad">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -58,7 +56,7 @@ title: MichelVilleneuve's Projects
 
   <!-- FlowChart -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('flowchart')">
+    <div class="img-container" onclick="openLightbox('flowchart', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/FlowChart.jpg" alt="FlowChart">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -67,18 +65,17 @@ title: MichelVilleneuve's Projects
 
   <!-- BrushDraw -->
   <figure class="gallery-item">
-    <div class="img-container" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')" onclick="openLightbox('brushdraw')">
+    <div class="img-container" onclick="openLightbox('brushdraw', 0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
       <img src="Images/BrushDraw.png" alt="BrushDraw">
       <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>BrushDraw</figcaption>
   </figure>
-
 </div>
 
 <!-- Lightbox -->
-<div id="lightbox" onclick="closeLightbox()">
-  <span id="close">&times;</span>
+<div id="lightbox">
+  <span id="close" onclick="closeLightbox()">&times;</span>
   <span id="prev" class="lightbox-nav" onclick="prevSlide(event)">&#10094;</span>
   <img id="lightbox-img" src="">
   <span id="next" class="lightbox-nav" onclick="nextSlide(event)">&#10095;</span>
@@ -89,30 +86,120 @@ title: MichelVilleneuve's Projects
   <p>&copy; 2025 MichelVilleneuve</p>
 </footer>
 
+<style>
+/* ===== Gallery Styles ===== */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-item { flex: 1 1 150px; max-width: 180px; text-align: center; }
+
+.img-container {
+  position: relative;
+  width: 160px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, z-index 0s;
+}
+
+.img-container.hovered img {
+  transform: scale(2);
+  z-index: 5;
+}
+
+.click-instruction {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.75em;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.img-container.hovered .click-instruction { opacity: 1; }
+
+/* ===== Lightbox Styles ===== */
+#lightbox {
+  display: none;
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+#features-box {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  text-align: left;
+  max-width: 80%;
+  line-height: 1.4em;
+  display: none;
+  z-index: 1010;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  z-index: 1020;
+}
+#prev { left: 10px; }
+#next { right: 10px; }
+#close { position: absolute; top: 10px; right: 10px; font-size: 2em; color: #fff; cursor: pointer; z-index: 1020; }
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .gallery-container { justify-content: flex-start; }
+  .gallery-item { width: 100%; }
+}
+</style>
+
 <script>
+// App data
 const appData = {
   cycling: {
-    images: [
-      "Images/CyclingTracker.png",
-      "Images/CyclingTracker1.png",
-      "Images/CyclingTracker2.png",
-      "Images/CyclingTracker3.png",
-      "Images/CyclingTracker4.png",
-      "Images/CyclingTracker5.png"
-    ],
-    features: `
-      <ul>
-        <li>Distance</li>
-        <li>Road Slope</li>
-        <li>Calories</li>
-        <li>Current Time</li>
-        <li>AVG Speed</li>
-        <li>Max Speed</li>
-        <li>Elevation Gain</li>
-        <li>Elevation Loss</li>
-        <li>Elevation Net</li>
-      </ul>
-    `
+    images: ["Images/CyclingTracker.png","Images/CyclingTracker1.png","Images/CyclingTracker2.png","Images/CyclingTracker3.png","Images/CyclingTracker4.png","Images/CyclingTracker5.png"],
+    features: `<ul>
+      <li>Distance</li><li>Road Slope</li><li>Calories</li><li>Current Time</li><li>AVG Speed</li><li>Max Speed</li><li>Elevation Gain</li><li>Elevation Loss</li><li>Elevation Net</li>
+    </ul>`
   },
   calcconv: { images: ["Images/CalcConv.jpg"], features: "<p>Coming soon...</p>" },
   unitscalculator: { images: ["Images/UnitsCalculator.jpg"], features: "<p>Coming soon...</p>" },
@@ -125,12 +212,10 @@ const appData = {
 let currentApp = null;
 let currentIndex = 0;
 
-function openLightbox(app) {
-  event.stopPropagation();
+function openLightbox(app, index) {
   currentApp = app;
-  currentIndex = 0;
-  const lightbox = document.getElementById("lightbox");
-  lightbox.style.display = "flex";
+  currentIndex = index;
+  document.getElementById("lightbox").style.display = "flex";
   showSlide(currentIndex);
 }
 
@@ -141,13 +226,11 @@ function closeLightbox() {
 function showSlide(index) {
   const img = document.getElementById("lightbox-img");
   const featuresBox = document.getElementById("features-box");
-
-  if (index === 0 && appData[currentApp].features) {
-    img.src = appData[currentApp].images[0];
+  img.src = appData[currentApp].images[index];
+  if (index === 0) {
     featuresBox.innerHTML = appData[currentApp].features;
     featuresBox.style.display = "block";
   } else {
-    img.src = appData[currentApp].images[index];
     featuresBox.style.display = "none";
   }
 }
@@ -162,7 +245,4 @@ function nextSlide(event) {
 function prevSlide(event) {
   event.stopPropagation();
   currentIndex--;
-  if (currentIndex < 0) currentIndex = appData[currentApp].images.length - 1;
-  showSlide(currentIndex);
-}
-</script>
+  if (currentIndex < 0) currentIndex = appData
