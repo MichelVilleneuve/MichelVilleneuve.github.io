@@ -105,22 +105,25 @@ title: MichelVilleneuve's Projects
   border-radius: 5px;
   cursor: pointer;
   z-index: 1;
+  transition: z-index 0.2s ease;
 }
 
-
+.img-container.hovered,
+.img-container.active {
+  z-index: 100;        /* bring container (and image) above others */
+}
+   
 .img-container img {
   width: 100%;
   height: auto;           /* keep full image visible */
   object-fit: contain;    /* optional, ensures entire image fits */
   border-radius: 5px;
   transition: transform 0.4s ease;
-  z-index: 1;
 }
 
-
-.img-container.hovered img {
-  transform: scale(2);
-  z-index: 10;
+   .img-container.hovered img,
+.img-container.active img {
+  transform: scale(2.0);
 }
 
 .click-instruction {
