@@ -245,4 +245,7 @@ function nextSlide(event) {
 function prevSlide(event) {
   event.stopPropagation();
   currentIndex--;
-  if (currentIndex < 0) currentIndex = appData
+  if (currentIndex < 0) currentIndex = appData[currentApp].images.length - 1;
+  showSlide(currentIndex);
+}
+</script>
