@@ -97,7 +97,7 @@ title: MichelVilleneuve's Projects
 
 .gallery-item {
   text-align: center;
-   margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .img-container {
@@ -111,32 +111,78 @@ title: MichelVilleneuve's Projects
   transition: z-index 0.2s ease;
 }
 
-.img-container.hovered,
-.img-container.active {
-  z-index: 100;        /* bring container (and image) above others */
-}
-   
 .img-container img {
   width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 5px;
   transition: transform 0.4s ease;
-  position: relative;  /* needed for z-index to work */
+  position: relative;
   z-index: 1;
 }
 
-   .img-container.hovered img,
+.img-container.hovered img,
 .img-container.active img {
   transform: scale(2.0);
+  z-index: 100;        /* scale above neighbors */
 }
 
-   .gallery-item figcaption {
-  margin-top: 6px;   /* spacing below image */
+/* Features overlay */
+.features-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 0.8em;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  white-space: normal;
+  max-width: 90%;
+  width: max-content;
+  min-width: 100px;
+  transition: opacity 0.3s ease;
+  z-index: 101;
+}
+
+/* Show features only when clicked */
+.img-container.active .features-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Click instruction text */
+.click-instruction {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.75em;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  z-index: 102;
+}
+
+.img-container.hovered .click-instruction {
+  opacity: 1;
+}
+
+.gallery-item figcaption {
+  margin-top: 6px;
   font-size: 1em;
   color: #555;
-  position: relative; /* ensure it stays below the image */
-  z-index: 1;         /* captions stay under scaled image */
+  position: relative;
+  z-index: 1;
 }
    
 .click-instruction {
