@@ -92,7 +92,7 @@ title: MichelVilleneuve's Projects
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 10px 10px;
 }
 
 .gallery-item { flex: 1 1 150px; max-width: 180px; text-align: center; }
