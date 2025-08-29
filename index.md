@@ -97,7 +97,8 @@ title: MichelVilleneuve's Projects
 
 .gallery-item {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px; /* extra space for scaled-up images */
+  position: relative;
 }
 
 .img-container {
@@ -121,10 +122,10 @@ title: MichelVilleneuve's Projects
   z-index: 1;
 }
 
-.img-container.hovered img, 
-   .img-container.active img { 
-      transform: scale(2.0); 
-      z-index: 100; /* scale above neighbors */ }
+.img-container.hovered img {
+  transform: scale(2.0);
+  z-index: 10;   /* high, but not over captions */
+}
    
 /* Features overlay */
 .features-box {
@@ -177,11 +178,12 @@ title: MichelVilleneuve's Projects
 }
 
 .gallery-item figcaption {
-  margin-top: 6px;
+  margin-top: 10px;
   font-size: 1em;
-  color: #555;
+  color: #333;
   position: relative;
-  z-index: 0;
+  z-index: 0;  /* stays below the image */
+  background: transparent;
 }
 
    .img-container.hovered,
