@@ -121,7 +121,11 @@ title: MichelVilleneuve's Projects
   z-index: 1;
 }
 
-.img-container.hovered img, .img-container.active img { transform: scale(2.0); z-index: 100; /* scale above neighbors */ }
+.img-container.hovered img, 
+   .img-container.active img { 
+      transform: scale(2.0); 
+      z-index: 100; /* scale above neighbors */ }
+   
 /* Features overlay */
 .features-box {
   position: absolute;
