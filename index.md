@@ -5,7 +5,7 @@ title: MichelVilleneuve's Projects
 <link rel="stylesheet" href="/assets/css/style.css">
 
 <div class="site-header">
-  <h1 class="site-title">MichelVilleneuve's Projects</h1>
+   <!-- <h1 class="site-title">MichelVilleneuve's Projects</h1> -->
 </div>
 
 <div class="gallery-container">
@@ -101,22 +101,26 @@ title: MichelVilleneuve's Projects
   position: relative;
   width: 160px;
   height: 280px;
-  overflow: hidden;
+  overflow: visible;   /* <-- allow image to scale outside */
   border-radius: 5px;
   cursor: pointer;
   z-index: 1;
 }
 
+
 .img-container img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* show entire image on hover */
-  transition: transform 0.4s ease, z-index 0s;
+  height: auto;           /* keep full image visible */
+  object-fit: contain;    /* optional, ensures entire image fits */
+  border-radius: 5px;
+  transition: transform 0.4s ease;
+  z-index: 1;
 }
+
 
 .img-container.hovered img {
   transform: scale(2);
-  z-index: 5;
+  z-index: 10;
 }
 
 .click-instruction {
