@@ -124,7 +124,7 @@ title: MichelVilleneuve's Projects
 .img-container.hovered img,
 .img-container.active img {
   transform: scale(2.0);
-  z-index: 100;        /* scale above neighbors */
+  z-index: 200;        /* scale above neighbors */
 }
 
 /* Features overlay */
@@ -182,7 +182,7 @@ title: MichelVilleneuve's Projects
   font-size: 1em;
   color: #555;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
    
 .click-instruction {
