@@ -1,31 +1,19 @@
-// ===== App Data (images + features for each app) =====
 const appData = {
-  calcconv: {
-    images: ["Images/CalcConv.jpg", "Images/CalcConv2.jpg"],
-    features: `
-      <ul>
-        <li>Unit conversions</li>
-        <li>Currency calculator</li>
-        <li>Offline mode</li>
-      </ul>
-    `
-  },
   cycling: {
-    images: ["Images/CyclingTracker.png", "Images/CyclingTracker2.png"],
-    features: `
-      <ul>
-        <li>Track speed & distance</li>
-        <li>Save ride history</li>
-        <li>Export to CSV</li>
-      </ul>
-    `
-  }
+    images: ["Images/CyclingTracker.png","Images/CyclingTracker1.png"],
+    features: "<ul><li>Distance</li><li>Road Slope</li><li>Calories</li></ul>"
+  },
+  calcconv: { images: ["Images/CalcConv.jpg"], features: "<p>Coming soon...</p>" },
+  unitscalculator: { images: ["Images/UnitsCalculator.jpg"], features: "<p>Coming soon...</p>" },
+  fieldcad: { images: ["Images/FieldCAD.jpg"], features: "<p>Coming soon...</p>" },
+  notepad: { images: ["Images/NotePad.jpg"], features: "<p>Coming soon...</p>" },
+  flowchart: { images: ["Images/FlowChart.jpg"], features: "<p>Coming soon...</p>" },
+  brushdraw: { images: ["Images/BrushDraw.png"], features: "<p>Coming soon...</p>" }
 };
 
 let currentApp = null;
 let currentIndex = 0;
 
-// ===== Lightbox Controls =====
 function openLightbox(app, index) {
   currentApp = app;
   currentIndex = index;
@@ -40,10 +28,7 @@ function closeLightbox() {
 function showSlide(index) {
   const img = document.getElementById("lightbox-img");
   const featuresBox = document.getElementById("features-box");
-
   img.src = appData[currentApp].images[index];
-
-  // Show features only on first image
   if (index === 0) {
     featuresBox.innerHTML = appData[currentApp].features;
     featuresBox.style.display = "block";
@@ -55,13 +40,13 @@ function showSlide(index) {
 function nextSlide(event) {
   event.stopPropagation();
   currentIndex++;
-  if (currentIndex >= appData[currentApp].images.length) currentIndex = 0;
+  if(currentIndex >= appData[currentApp].images.length) currentIndex=0;
   showSlide(currentIndex);
 }
 
 function prevSlide(event) {
   event.stopPropagation();
   currentIndex--;
-  if (currentIndex < 0) currentIndex = appData[currentApp].images.length - 1;
+  if(currentIndex <0) currentIndex= appData[currentApp].images.length-1;
   showSlide(currentIndex);
 }
