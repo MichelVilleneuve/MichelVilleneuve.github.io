@@ -92,26 +92,28 @@ title: MichelVilleneuve's Projects
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 10px; /* gap between items left-right and top-bottom */
 }
 
 .gallery-item {
   display: flex;
   flex-direction: column; /* stack image and caption */
   align-items: center;
-  margin-bottom: 20px;    /* controls gap between rows */
+  margin-bottom: 20px;    /* gap between rows */
+  position: relative;
+  z-index: 0;             /* captions are baseline */
 }
 
 .img-container {
   width: 160px;
   height: 280px;
-  overflow: visible;
+  overflow: visible;       /* let zoom extend outside */
   border-radius: 5px;
   cursor: pointer;
   z-index: 1;
   transition: z-index 0.2s ease;
 }
-   
+
 .img-container img {
   width: 100%;
   height: auto;
@@ -125,9 +127,9 @@ title: MichelVilleneuve's Projects
 .img-container.hovered img,
 .img-container.active img {
   transform: scale(2.0);
-  z-index: 100;   /* image zooms over neighbors but not captions */
+  z-index: 100;   /* bring image over neighbors */
 }
-   
+
 /* Features overlay */
 .features-box {
   position: absolute;
@@ -154,6 +156,15 @@ title: MichelVilleneuve's Projects
 .img-container.active .features-box {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* App name below the image */
+.gallery-item figcaption {
+  margin-top: 8px;  /* space between image and name */
+  font-size: 1em;
+  color: #333;
+  position: relative;
+  z-index: 0;       /* stays below zoomed image */
 }
 
 /* Click instruction text */
