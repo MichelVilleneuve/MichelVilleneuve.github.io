@@ -96,22 +96,22 @@ title: MichelVilleneuve's Projects
 }
 
 .gallery-item {
-  text-align: center;
-  margin-bottom: 20px; /* extra space for scaled-up images */
-  position: relative;
+  display: flex;
+  flex-direction: column; /* stack image and caption */
+  align-items: center;
+  margin-bottom: 20px;    /* controls gap between rows */
 }
 
 .img-container {
-  position: relative;
   width: 160px;
   height: 280px;
-  overflow: visible;  /* allow image to scale beyond container */
+  overflow: visible;
   border-radius: 5px;
-  margin: 0 auto;
   cursor: pointer;
+  z-index: 1;
   transition: z-index 0.2s ease;
 }
-
+   
 .img-container img {
   width: 100%;
   height: auto;
@@ -179,12 +179,10 @@ title: MichelVilleneuve's Projects
 }
 
 .gallery-item figcaption {
-  margin-top: 75px;
+  margin-top: 8px;  /* space between image and caption */
   font-size: 1em;
-  color: #333;
-  display: block;
-  position: relative;
-  z-index: 200; /* stays above the zoomed image */
+  color: #555;
+  position: static; /* important! no absolute positioning */
 }
 
    .img-container.hovered,
