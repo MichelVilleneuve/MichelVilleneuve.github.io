@@ -88,4 +88,23 @@ title: MichelVilleneuve's Projects
   <p>&copy; 2025 MichelVilleneuve</p>
 </footer>
 
-<script src="/assets/js/lightbox.js"></script>
+<script>
+  src="/assets/js/lightbox.js";
+
+function showClickText(event) {
+    const text = event.currentTarget.querySelector('.click-instruction');
+    text.style.opacity = 1;
+}
+
+function moveClickText(event) {
+    const text = event.currentTarget.querySelector('.click-instruction');
+    text.style.left = (event.clientX + 12) + 'px';   // offset from pointer
+    text.style.top = (event.clientY + 12) + 'px';
+}
+
+function hideClickText(event) {
+    const text = event.currentTarget.querySelector('.click-instruction');
+    text.style.opacity = 0;
+}
+</script>
+
