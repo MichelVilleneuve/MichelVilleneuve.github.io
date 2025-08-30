@@ -50,3 +50,27 @@ function prevSlide(event) {
   if(currentIndex <0) currentIndex= appData[currentApp].images.length-1;
   showSlide(currentIndex);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const imgContainers = document.querySelectorAll('.img-container');
+    imgContainers.forEach(container => {
+        container.addEventListener('mouseover', showClickText);
+        container.addEventListener('mousemove', moveClickText);
+        container.addEventListener('mouseout', hideClickText);
+    });
+});
+
+function showClickText(event) {
+    const text = event.currentTarget.querySelector('.click-instruction');
+    text.style.opacity = 1;
+}
+
+function moveClickText(event) {
+    const text = event.currentTarget.querySelector('.click-instruction');
+    text.style.left = (event.clientX + 12) + 'px';
+    text.style.top = (event.clientY + 12) + 'px';
+}
+
+function hideClickText(event) {
+    const text = event.currentTarget.querySelector('.click-instruction');
+    text.style.opacity = 0;
+}
