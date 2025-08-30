@@ -5,8 +5,7 @@ const appData = {
       "Images/CyclingTracker1.png",
       "Images/CyclingTracker2.png",
       "Images/CyclingTracker3.png",
-      "Images/CyclingTracker4.png",
-      "Images/CyclingTracker5.png"
+      "Images/CyclingTracker4.png"
     ],
     features: `<ul>
       <li>Distance</li>
