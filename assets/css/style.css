@@ -1,3 +1,40 @@
+/* ===== Site Header (Title + Logo) ===== */
+.site-header {
+    display: flex;
+    flex-direction: column; /* stack logo, title, description */
+    align-items: center;    /* center horizontally */
+    justify-content: center; /* vertically center */
+    text-align: center;
+    gap: 15px;              /* space between logo, title, description */
+    margin-bottom: 20px;    /* space under header */
+}
+
+.site-logo {
+    max-width: 60px;        /* adjust logo size */
+    height: auto;
+    border-radius: 10px;    /* optional: rounded logo */
+    margin-bottom: 10px;
+}
+
+.site-title {
+    font-size: 1.5em;       /* title size */
+    font-weight: bold;
+    margin: 0;              /* remove default spacing */
+    color: #222;
+    text-align: center;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-description {
+    font-size: 1em;
+    color: #555;
+    margin-top: 5px;
+}
+
 /* ===== Base Body ===== */
 body {
     font-family: sans-serif;
