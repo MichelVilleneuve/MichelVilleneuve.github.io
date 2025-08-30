@@ -37,5 +37,3 @@ function prevSlide(event) {
   if (currentIndex < 0) currentIndex = appData[currentApp].images.length - 1;
   showSlide(currentIndex);
 }
-</script>
-
