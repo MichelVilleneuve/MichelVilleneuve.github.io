@@ -1,7 +1,24 @@
 const appData = {
   cycling: {
-    images: ["Images/CyclingTracker.png","Images/CyclingTracker1.png"],
-    features: "<ul><li>Distance</li><li>Road Slope</li><li>Calories</li></ul>"
+    images: [
+      "Images/CyclingTracker.png",
+      "Images/CyclingTracker1.png",
+      "Images/CyclingTracker2.png",
+      "Images/CyclingTracker3.png",
+      "Images/CyclingTracker4.png",
+      "Images/CyclingTracker5.png"
+    ],
+    features: `<ul>
+      <li>Distance</li>
+      <li>Road Slope</li>
+      <li>Calories</li>
+      <li>Current Time</li>
+      <li>AVG Speed</li>
+      <li>Max Speed</li>
+      <li>Elevation Gain</li>
+      <li>Elevation Loss</li>
+      <li>Elevation Net</li>
+    </ul>`
   },
   calcconv: { images: ["Images/CalcConv.jpg"], features: "<p>Coming soon...</p>" },
   unitscalculator: { images: ["Images/UnitsCalculator.jpg"], features: "<p>Coming soon...</p>" },
