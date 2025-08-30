@@ -2,7 +2,7 @@ const appData = {
   cycling: {
     images: [
       "Images/CyclingTracker.png",
-      "Images/CyclingTracker0.png"
+      "Images/CyclingTracker0.png",
       "Images/CyclingTracker1.png",
       "Images/CyclingTracker2.png",
       "Images/CyclingTracker3.png",
