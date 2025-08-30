@@ -57,18 +57,17 @@ body {
 
 /* Click instruction overlay */
 .click-instruction {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.6);
+    position: fixed;           /* float with pointer */
+    background: rgba(0,0,0,0.7);
     color: #fff;
     padding: 4px 8px;
     font-size: 0.75em;
     border-radius: 6px;
+    pointer-events: none;      /* don’t block mouse events */
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
+    white-space: wrap;
+    z-index: 999;
 }
 
 .img-container.hovered .click-instruction {
@@ -82,19 +81,7 @@ body {
     color: #555;
 }
 
-.click-instruction {
-    position: fixed;           /* float with pointer */
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 4px 8px;
-    font-size: 0.75em;
-    border-radius: 6px;
-    pointer-events: none;      /* don’t block mouse events */
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
-    z-index: 999;
-}
+
 
 
 /* ===== Lightbox ===== */
