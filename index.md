@@ -115,7 +115,9 @@ title: MichelVilleneuve's Projects
   margin-top: 8px;  /* space between image and caption */
   font-size: 1em;
   color: #555;
-  position: static; /* important! no absolute positioning */
+  /* position: static; important! no absolute positioning */
+     position: relative;
+  z-index: 0;
 }
 
    .img-container.hovered,
