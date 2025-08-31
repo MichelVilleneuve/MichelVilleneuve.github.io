@@ -63,19 +63,21 @@ body {
 
 /* Card box around each image */
 .img-card {
-  width: 180px;
-  height: 280px;
+  width: 180px;                  /* base width */
+  aspect-ratio: 1080 / 2340;     /* maintain image aspect ratio */
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  overflow: hidden; /* 🔑 keeps image inside */
+  overflow: hidden;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+
+  /* Center image */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;   /* equal margin inside card */
+  padding: 10px;                 /* spacing inside card */
 }
 
 
