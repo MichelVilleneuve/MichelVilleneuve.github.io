@@ -60,6 +60,19 @@ body {
     margin-bottom: 20px;
 }
 
+/* Card box around each image */
+.img-card {
+  width: 180px;
+  height: 280px;
+  background: #fff; /* card background */
+  border-radius: 15px; /* rounded edges */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden; /* keep image inside box */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
 .img-card:hover {
   transform: translateY(-6px); /* subtle lift effect */
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
@@ -76,6 +89,7 @@ body {
 .img-card:hover img {
   transform: scale(1.1); /* zoom in smoothly inside the box */
 }
+
 
 .img-container {
     position: relative;
