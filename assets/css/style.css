@@ -64,16 +64,16 @@ body {
 /* Card box around each image */
 .img-card {
   width: 180px;
+  height: 280px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  overflow: hidden;
+  overflow: hidden; /* 🔑 keeps image inside */
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  padding: 20px;
-  box-sizing: border-box;
 }
+
 
 .img-card:hover {
   transform: translateY(-6px); /* subtle lift effect */
@@ -83,14 +83,13 @@ body {
 /* Image inside the card */
 .img-card img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;  /* 🔑 fills the card fully */
   transition: transform 0.4s ease;
 }
 
 .img-card:hover img {
-  transform: scale(1.1); /* zoom in smoothly inside the box */
+  transform: scale(1.1); /* zooms in but stays clipped in card */
 }
 
 /* Tooltip inside card */
