@@ -82,12 +82,12 @@ body {
 
 /* Image inside the card */
 .img-card img {
-  width: 100%;
-  height: auto;           /* keep natural height */
-  max-height: 100%;       /* don’t exceed card */
-  object-fit: contain;    /* no cropping */
+  width: 90%;             /* shrink a little so there’s margin */
+  height: auto;
+  max-height: 90%;        /* keep bottom margin same as top */
+  object-fit: contain;    /* no cropping, fits within */
   display: block;
-  margin: auto;           /* center inside card */
+  margin: auto;           /* centers image inside card */
   transition: transform 0.4s ease;
 }
 
