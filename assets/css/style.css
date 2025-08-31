@@ -48,7 +48,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px 25px;
+    gap: 8px 25px;
     padding: 10px;
     box-sizing: border-box;
 }
