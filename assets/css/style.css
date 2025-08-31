@@ -68,10 +68,12 @@ body {
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  overflow: hidden; /* 🔑 keeps image inside */
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 
