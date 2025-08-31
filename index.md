@@ -12,7 +12,7 @@ title: MichelVilleneuve's Projects
 
   <!-- CyclingTracker -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('cycling',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('cycling',0)">
       <img src="Images/CyclingTracker.png" alt="CyclingTracker">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -21,7 +21,7 @@ title: MichelVilleneuve's Projects
 
   <!-- CalcConv -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('calcconv',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('calcconv',0)">
       <img src="Images/CalcConv.jpg" alt="CalcConv">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -30,7 +30,7 @@ title: MichelVilleneuve's Projects
 
   <!-- UnitsCalculator -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('unitscalculator',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('unitscalculator',0)">
       <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -39,7 +39,7 @@ title: MichelVilleneuve's Projects
 
   <!-- FieldCAD -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('fieldcad',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('fieldcad',0)">
       <img src="Images/FieldCAD.jpg" alt="FieldCAD">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -48,7 +48,7 @@ title: MichelVilleneuve's Projects
 
   <!-- NotePad -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('notepad',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('notepad',0)">
       <img src="Images/NotePad.jpg" alt="NotePad">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -57,7 +57,7 @@ title: MichelVilleneuve's Projects
 
   <!-- FlowChart -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('flowchart',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('flowchart',0)">
       <img src="Images/FlowChart.jpg" alt="FlowChart">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -66,7 +66,7 @@ title: MichelVilleneuve's Projects
 
   <!-- BrushDraw -->
   <figure class="gallery-item">
-    <div class="img-container" onclick="openLightbox('brushdraw',0)" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
+    <div class="img-card" onclick="openLightbox('brushdraw',0)">
       <img src="Images/BrushDraw.png" alt="BrushDraw">
       <div class="click-instruction">Click to see full features</div>
     </div>
@@ -88,7 +88,4 @@ title: MichelVilleneuve's Projects
   <p>&copy; 2025 MichelVilleneuve</p>
 </footer>
 
-<script
-  src="/assets/js/lightbox.js">
-</script>
-
+<script src="/assets/js/lightbox.js"></script>
