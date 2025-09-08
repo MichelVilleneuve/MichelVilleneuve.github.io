@@ -31,7 +31,7 @@ title: MichelVilleneuve's Projects
   <!-- UnitsCalculator -->
   <figure class="gallery-item">
     <div class="img-card" onclick="openLightbox('unitscalculator',0)">
-      <img src="Images/UnitsCalculator.jpg" alt="UnitsCalculator">
+      <img src="Images/UnitsCalculator.png" alt="UnitsCalculator">
       <div class="click-instruction">Click to see full features</div>
     </div>
     <figcaption>UnitsCalculator</figcaption>
