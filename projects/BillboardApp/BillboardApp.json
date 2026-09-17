@@ -1,0 +1,20 @@
+{
+  "folder": "BillboardApp",
+  "name": "BillboardApp",
+  "type": "Visual Studio (C#/WPF)",
+  "description": "WPF digital signage app for rotating PC monitor content display",
+  "date": "2024-09-15",
+  "github": "https://github.com/michelvilleneuve/BillboardApp",
+  "tech": ["C#", "WPF", "Windows Desktop"],
+  "screenshots": ["1.png", "2.png", "3.png", "4.png"],
+  "fullDescription": "Billboard App is a comprehensive Windows desktop application that transforms a PC monitor (or multiple monitors) into a rotating content display with multi-monitor support, content scheduling, music/audio, and a full admin panel.",
+  "features": [
+    "Multi-monitor support with Mirror, Sequential, and Conveyor display modes",
+    "Image and video content rotation with configurable intervals",
+    "Animated text slides with full styling options",
+    "Scrolling banner ticker with directional control",
+    "Background music loop with per-slide audio support",
+    "Audio device selector for flexible output routing",
+    "System tray integration for quick access to admin panel"
+  ]
+}
