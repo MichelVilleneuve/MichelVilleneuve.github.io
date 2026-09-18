@@ -73,7 +73,12 @@ function renderProjects() {
 
     const filtered = projects.filter(project => {
         if (currentFilter === 'all') return true;
-        return project.type.toLowerCase().includes(currentFilter);
+        
+        // Normalize type and filter for better matching
+        const normalizedType = project.type.toLowerCase().replace(/[- ]/g, '');
+        const normalizedFilter = currentFilter.toLowerCase().replace(/[- ]/g, '');
+        
+        return normalizedType.includes(normalizedFilter);
     });
 
     if (filtered.length === 0) {
