@@ -82,10 +82,13 @@ function createProjectCard(project) {
     card.href = `projects/${project.folder}/`;
     card.className = 'project-card';
 
-    // Get first screenshot if available
-    const screenshot = project.screenshots && project.screenshots[0] 
-        ? `projects/${project.folder}/screenshots/${project.screenshots[0]}`
-        : null;
+    // Use thumbnail if available, otherwise use first screenshot
+    let thumbnail = null;
+    if (project.thumbnail) {
+        thumbnail = `projects/${project.folder}/${project.thumbnail}`;
+    } else if (project.screenshots && project.screenshots[0]) {
+        thumbnail = `projects/${project.folder}/screenshots/${project.screenshots[0]}`;
+    }
 
     const tagsHtml = project.tech
         ? project.tech.map(t => `<span class="tag">${t}</span>`).join('')
@@ -93,7 +96,7 @@ function createProjectCard(project) {
 
     card.innerHTML = `
         <div class="project-thumbnail">
-            ${screenshot ? `<img src="${screenshot}" alt="${project.name}">` : 'Screenshot'}
+            ${thumbnail ? `<img src="${thumbnail}" alt="${project.name}">` : 'Screenshot'}
         </div>
         <div class="project-info">
             <h3 class="project-title">${project.name}</h3>
