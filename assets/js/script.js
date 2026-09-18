@@ -74,11 +74,15 @@ function renderProjects() {
     const filtered = projects.filter(project => {
         if (currentFilter === 'all') return true;
         
-        // Normalize type and filter for better matching
-        const normalizedType = project.type.toLowerCase().replace(/[- ]/g, '');
-        const normalizedFilter = currentFilter.toLowerCase().replace(/[- ]/g, '');
+        // Simple substring match on project type
+        if (currentFilter === 'visual-studio') {
+            return project.type.toLowerCase().includes('visual studio') || project.type.toLowerCase().includes('c#');
+        }
+        if (currentFilter === 'android') {
+            return project.type.toLowerCase().includes('android');
+        }
         
-        return normalizedType.includes(normalizedFilter);
+        return true;
     });
 
     if (filtered.length === 0) {
