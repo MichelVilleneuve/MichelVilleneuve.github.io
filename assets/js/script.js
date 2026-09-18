@@ -11,26 +11,55 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load all projects from their JSON files
 async function loadProjects() {
     try {
-        // This will be populated as you add projects
-        // For now, we'll look for projects in the projects/ directory
-        const projectFolders = [
-            'billboard-app',
-            'inventor-files-manager',
-            'postit-app'
+        // Attempt to load a projects manifest or scan common project names
+        // Since we can't easily list directories, we try common patterns
+        
+        // Get all possible project folders by trying to fetch each one's JSON
+        const possibleFolders = [
+            'billboard-app', 'BillboardApp',
+            'inventor-files-manager', 'InventorFilesManager',
+            'postit-app', 'PostItApp',
+            'billboard-app', 'post-it-app',
+            'inventor-files-manager'
         ];
 
-        for (const folder of projectFolders) {
+        // Try to load projects - add newly discovered ones
+        const discoveredFolders = new Set();
+        
+        for (const folder of possibleFolders) {
+            if (discoveredFolders.has(folder)) continue;
+            
             try {
+                // Try exact folder name first
                 const response = await fetch(`projects/${folder}/${folder}.json`);
                 if (response.ok) {
                     const data = await response.json();
                     projects.push(data);
+                    discoveredFolders.add(folder);
+                    continue;
                 }
             } catch (err) {
-                console.log(`Project ${folder} not yet added`);
+                // Silently continue
+            }
+            
+            // If exact name didn't work, try with different casing variations
+            try {
+                const lowerFolder = folder.toLowerCase();
+                const response = await fetch(`projects/${folder}/${lowerFolder}.json`);
+                if (response.ok) {
+                    const data = await response.json();
+                    projects.push(data);
+                    discoveredFolders.add(folder);
+                }
+            } catch (err) {
+                // Silently continue
             }
         }
 
+        if (projects.length === 0) {
+            console.warn('No projects found');
+        }
+        
         renderProjects();
     } catch (err) {
         console.error('Error loading projects:', err);
