@@ -51,16 +51,25 @@ body {
     margin: 0 auto;
 }
 
-.header h1 {
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
+.header-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.header p {
-    font-size: 15px;
-    color: var(--color-text-secondary);
+.header-logo {
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.header-text p {
+    margin: 5px 0 0 0;
 }
 
 /* Filter Bar */
