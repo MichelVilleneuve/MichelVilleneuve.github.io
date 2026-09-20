@@ -12,16 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadProjects() {
     try {
         // Load the projects manifest
-<<<<<<< HEAD
         const manifestResponse = await fetch('projects.json?v=' + Date.now());
-=======
-       const manifestResponse = await fetch('projects.json?v=' + Date.now());
->>>>>>> aa3bcf6342fef607264faa4b5c3a708dbc4da7f1
         if (!manifestResponse.ok) {
             console.error('Could not load projects.json manifest');
             return;
         }
-
         const manifest = await manifestResponse.json();
         const projectFolders = manifest.projects || [];
 
