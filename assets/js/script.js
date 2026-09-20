@@ -84,12 +84,8 @@ function createProjectCard(project) {
 
     // Use thumbnail if available, otherwise use first screenshot
     let thumbnail = null;
-    if (project.thumbnail) {
-<<<<<<< HEAD
-        thumbnail = `projects/${project.folder}/screenshots/${project.thumbnail}`;
-=======
-       thumbnail = `projects/${project.folder}/screenshots/${project.thumbnail}`;
->>>>>>> 02c78eb498a2ddc4c8ccd5fa2ab4b7db4fc39a45
+if (project.thumbnail) {
+    thumbnail = `projects/${project.folder}/screenshots/${project.thumbnail}`;
     } else if (project.screenshots && project.screenshots[0]) {
         thumbnail = `projects/${project.folder}/screenshots/${project.screenshots[0]}`;
     }

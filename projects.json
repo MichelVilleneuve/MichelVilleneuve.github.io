@@ -1,6 +1,7 @@
-{
+﻿{
   "projects": [
     "BillboardApp",
+    "InventorFilesManager",
     "ToDoList"
   ]
 }

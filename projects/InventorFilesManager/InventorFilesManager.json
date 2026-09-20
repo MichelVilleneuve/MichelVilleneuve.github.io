@@ -1,0 +1,22 @@
+﻿{
+  "folder": "InventorFilesManager",
+  "name": "InventorFilesManager",
+  "type": "Visual Studio (C#/WPF)",
+  "description": "Files manger for Autodesk Invnetor projects",
+  "date": "2026-09-20",
+  "github": "https://github.com/MichelVilleneuve/InventorFilesManager",
+  "thumbnail": "thumbnail.png",
+  "tech": [
+    "Tech1",
+    "Tech2"
+  ],
+  "screenshots": [
+    "1.png",
+    "2.png"
+  ],
+  "fullDescription": "Files manger for Autodesk Invnetor projects",
+  "features": [
+    "Feature 1",
+    "Feature 2"
+  ]
+}
