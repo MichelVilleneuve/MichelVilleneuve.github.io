@@ -319,10 +319,14 @@ body {
     object-fit: contain;
 }
 
+.carousel {
+    overflow: visible;
+}
+
 .carousel-slide img:hover {
-    transform: scale(1.2) !important;
+    transform: scale(1.1);
     cursor: zoom-in;
-    transition: transform 0.3s ease !important;
+    transition: transform 0.3s ease;
 }
 
 .carousel-btn {
