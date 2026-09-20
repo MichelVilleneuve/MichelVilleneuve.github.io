@@ -1,0 +1,22 @@
+﻿{
+  "folder": "CyclingTracker",
+  "name": "CyclingTracker",
+  "type": "Android Studio",
+  "description": "Navigator application for cycling",
+  "date": "2026-09-20",
+  "github": "https://Github.com/MichelVilleneuve/CyclingTracker",
+  "thumbnail": "thumbnail.png",
+  "tech": [
+    "Tech1",
+    "Tech2"
+  ],
+  "screenshots": [
+    "1.png",
+    "2.png"
+  ],
+  "fullDescription": "Navigator application for cycling",
+  "features": [
+    "Feature 1",
+    "Feature 2"
+  ]
+}

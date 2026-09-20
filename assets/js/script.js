@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadProjects() {
     try {
         // Load the projects manifest
-        const manifestResponse = await fetch('projects.json');
+        const manifestResponse = await fetch('projects.json?v=' + Date.now());
         if (!manifestResponse.ok) {
             console.error('Could not load projects.json manifest');
             return;
@@ -24,7 +24,7 @@ async function loadProjects() {
         // Load each project's JSON
         for (const folder of projectFolders) {
             try {
-                const response = await fetch(`projects/${folder}/${folder}.json`);
+                const response = await fetch(`projects/${folder}/${folder}.json?v=${Date.now()}`);
                 if (response.ok) {
                     const data = await response.json();
                     projects.push(data);
