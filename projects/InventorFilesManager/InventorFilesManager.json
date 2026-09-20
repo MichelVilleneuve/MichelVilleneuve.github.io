@@ -7,8 +7,9 @@
   "github": "https://github.com/MichelVilleneuve/InventorFilesManager",
   "thumbnail": "thumbnail.png",
   "tech": [
-    "Tech1",
-    "Tech2"
+    "C#",
+    "WRF",
+    "Windows Desktop"
   ],
   "screenshots": [
     "1.png",
