@@ -156,7 +156,7 @@ body {
 
 .project-thumbnail {
     background: var(--color-bg);
-    height: 200px;
+    aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
