@@ -345,7 +345,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease;
     z-index: 20;
 }
 
@@ -354,11 +353,11 @@ body {
 }
 
 .carousel-prev {
-    left: 8px;
+    left: 0;
 }
 
 .carousel-next {
-    right: 8px;
+    right: 0;
 }
 
 .carousel-counter {
