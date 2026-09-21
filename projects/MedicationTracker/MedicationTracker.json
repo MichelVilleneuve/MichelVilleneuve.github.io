@@ -7,8 +7,8 @@
   "github": "https://github.com/michelvilleneuve/MedicationTracker",
   "thumbnail": "thumbnail.png",
   "tech": [
-    "Tech1",
-    "Tech2"
+    "Kotlin",
+    "Android"
   ],
   "screenshots": [
     "1.png",
@@ -16,7 +16,10 @@
   ],
   "fullDescription": "Keeping track of prescrition medication, notify when to take them.",
   "features": [
-    "Feature 1",
-    "Feature 2"
+    "Keep track of prescription refilled date",
+    "Get notification when to take the medication.",
+    "Keep track of OTG and other.",
+    "Keep track of the cost, spending history.",
+    "Create a medication list."
   ]
 }
