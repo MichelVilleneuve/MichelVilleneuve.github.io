@@ -354,11 +354,11 @@ body {
 }
 
 .carousel-prev {
-    left: 12px;
+    left: 8px;
 }
 
 .carousel-next {
-    right: 12px;
+    right: 8px;
 }
 
 .carousel-counter {
