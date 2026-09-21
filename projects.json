@@ -3,6 +3,7 @@
     "BillboardApp",
     "CyclingTracker",
     "InventorFilesManager",
+    "MedicationTracker",
     "ToDoList"
   ]
 }

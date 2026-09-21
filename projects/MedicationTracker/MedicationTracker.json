@@ -1,0 +1,22 @@
+﻿{
+  "folder": "MedicationTracker",
+  "name": "MedicationTracker",
+  "type": "Android Studio",
+  "description": "Keeping track of prescrition medication, notify when to take them.",
+  "date": "2026-09-21",
+  "github": "https://github.com/michelvilleneuve/MedicationTracker",
+  "thumbnail": "thumbnail.png",
+  "tech": [
+    "Tech1",
+    "Tech2"
+  ],
+  "screenshots": [
+    "1.png",
+    "2.png"
+  ],
+  "fullDescription": "Keeping track of prescrition medication, notify when to take them.",
+  "features": [
+    "Feature 1",
+    "Feature 2"
+  ]
+}
