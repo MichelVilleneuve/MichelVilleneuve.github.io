@@ -150,14 +150,36 @@ class Carousel {
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', () => this.previous());
         }
+
         if (this.nextBtn) {
             this.nextBtn.addEventListener('click', () => this.next());
         }
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.previous();
-            if (e.key === 'ArrowRight') this.next();
+            if (e.key === 'ArrowLeft') {
+                this.previous();
+            }
+
+            if (e.key === 'ArrowRight') {
+                this.next();
+            }
+        });
+
+        // Reposition arrows when browser window changes size
+        window.addEventListener('resize', () => {
+            this.positionArrows();
+        });
+
+        // Wait for images to finish loading
+        this.container.querySelectorAll('img').forEach(img => {
+            if (img.complete) {
+                this.positionArrows();
+            } else {
+                img.addEventListener('load', () => {
+                    this.positionArrows();
+                });
+            }
         });
     }
 
@@ -165,19 +187,84 @@ class Carousel {
         if (this.slides.length === 0) return;
 
         // Wrap around
-        if (index >= this.slides.length) index = 0;
-        if (index < 0) index = this.slides.length - 1;
+        if (index >= this.slides.length) {
+            index = 0;
+        }
+
+        if (index < 0) {
+            index = this.slides.length - 1;
+        }
 
         this.currentIndex = index;
 
         // Hide all slides
-        this.slides.forEach(slide => slide.classList.remove('active'));
+        this.slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+
         // Show current slide
         this.slides[this.currentIndex].classList.add('active');
 
         // Update counter
         if (this.counter) {
-            this.counter.textContent = `${this.currentIndex + 1} of ${this.slides.length}`;
+            this.counter.textContent =
+                `${this.currentIndex + 1} of ${this.slides.length}`;
+        }
+
+        // Position arrows for the new image
+        // A tiny delay lets the browser calculate the image dimensions
+        requestAnimationFrame(() => {
+            this.positionArrows();
+        });
+    }
+
+    positionArrows() {
+        if (!this.container) return;
+
+        const activeSlide = this.slides[this.currentIndex];
+
+        if (!activeSlide) return;
+
+        const image = activeSlide.querySelector('img');
+
+        if (!image) return;
+
+        // Get actual displayed image dimensions
+        const imageRect = image.getBoundingClientRect();
+        const containerRect = this.container.getBoundingClientRect();
+
+        // Width of the arrow buttons
+        const buttonWidth = this.prevBtn
+            ? this.prevBtn.offsetWidth
+            : 44;
+
+        const gap = 8;
+
+        // Calculate image position relative to carousel
+        const imageLeft = imageRect.left - containerRect.left;
+        const imageRight = imageRect.right - containerRect.left;
+
+        // Position previous arrow just outside left side of image
+        if (this.prevBtn) {
+            let leftPosition = imageLeft - buttonWidth - gap;
+
+            // Don't let arrow go outside carousel
+            leftPosition = Math.max(8, leftPosition);
+
+            this.prevBtn.style.left = `${leftPosition}px`;
+            this.prevBtn.style.right = 'auto';
+        }
+
+        // Position next arrow just outside right side of image
+        if (this.nextBtn) {
+            let rightPosition =
+                containerRect.right - imageRect.right - buttonWidth - gap;
+
+            // Don't let arrow go outside carousel
+            rightPosition = Math.max(8, rightPosition);
+
+            this.nextBtn.style.right = `${rightPosition}px`;
+            this.nextBtn.style.left = 'auto';
         }
     }
 
