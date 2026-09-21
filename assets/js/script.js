@@ -218,55 +218,67 @@ class Carousel {
         });
     }
 
-    positionArrows() {
-        if (!this.container) return;
+positionArrows() {
+    if (!this.container) return;
 
-        const activeSlide = this.slides[this.currentIndex];
+    const activeSlide = this.slides[this.currentIndex];
+    if (!activeSlide) return;
 
-        if (!activeSlide) return;
+    const image = activeSlide.querySelector('img');
+    if (!image) return;
 
-        const image = activeSlide.querySelector('img');
+    const containerRect = this.container.getBoundingClientRect();
 
-        if (!image) return;
+    // Use the untransformed image dimensions.
+    // This prevents the hover zoom from affecting arrow position.
+    const naturalWidth = image.naturalWidth;
+    const naturalHeight = image.naturalHeight;
 
-        // Get actual displayed image dimensions
-        const imageRect = image.getBoundingClientRect();
-        const containerRect = this.container.getBoundingClientRect();
+    if (!naturalWidth || !naturalHeight) return;
 
-        // Width of the arrow buttons
-        const buttonWidth = this.prevBtn
-            ? this.prevBtn.offsetWidth
-            : 44;
+    const containerWidth = this.container.clientWidth;
+    const containerHeight = this.container.clientHeight;
 
-        const gap = 8;
+    const imageRatio = naturalWidth / naturalHeight;
+    const containerRatio = containerWidth / containerHeight;
 
-        // Calculate image position relative to carousel
-        const imageLeft = imageRect.left - containerRect.left;
-        const imageRight = imageRect.right - containerRect.left;
+    let imageWidth;
+    let imageHeight;
 
-        // Position previous arrow just outside left side of image
-        if (this.prevBtn) {
-            let leftPosition = imageLeft - buttonWidth - gap;
-
-            // Don't let arrow go outside carousel
-            leftPosition = Math.max(8, leftPosition);
-
-            this.prevBtn.style.left = `${leftPosition}px`;
-            this.prevBtn.style.right = 'auto';
-        }
-
-        // Position next arrow just outside right side of image
-        if (this.nextBtn) {
-            let rightPosition =
-                containerRect.right - imageRect.right - buttonWidth - gap;
-
-            // Don't let arrow go outside carousel
-            rightPosition = Math.max(8, rightPosition);
-
-            this.nextBtn.style.right = `${rightPosition}px`;
-            this.nextBtn.style.left = 'auto';
-        }
+    // Reproduce object-fit: contain
+    if (imageRatio > containerRatio) {
+        imageWidth = containerWidth;
+        imageHeight = containerWidth / imageRatio;
+    } else {
+        imageHeight = containerHeight;
+        imageWidth = containerHeight * imageRatio;
     }
+
+    // Centered image inside carousel
+    const imageLeft = (containerWidth - imageWidth) / 2;
+    const imageRight = imageLeft + imageWidth;
+
+    const buttonWidth = this.prevBtn
+        ? this.prevBtn.offsetWidth
+        : 44;
+
+    const gap = 10;
+
+    // Position arrows OUTSIDE the actual image
+    if (this.prevBtn) {
+        const left = imageLeft - buttonWidth - gap;
+
+        this.prevBtn.style.left = `${left}px`;
+        this.prevBtn.style.right = 'auto';
+    }
+
+    if (this.nextBtn) {
+        const right = containerWidth - imageRight - buttonWidth - gap;
+
+        this.nextBtn.style.right = `${right}px`;
+        this.nextBtn.style.left = 'auto';
+    }
+}
 
     next() {
         this.showSlide(this.currentIndex + 1);
