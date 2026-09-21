@@ -2,7 +2,7 @@
   "folder": "BillboardApp",
   "name": "BillboardApp",
   "type": "Visual Studio (C#/WPF)",
-  "description": "WPF digital signage app for rotating PC monitor content display",
+  "description": "Billboard to display text slides, images, and banner on monitor or TV.",
   "date": "2024-09-15",
   "github": "https://github.com/michelvilleneuve/BillboardApp",
   "thumbnail": "thumbnail.png",
