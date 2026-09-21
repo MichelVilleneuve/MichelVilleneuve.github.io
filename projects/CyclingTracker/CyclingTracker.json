@@ -7,8 +7,8 @@
   "github": "https://github.com/michelvilleneuve/CyclingTracker",
   "thumbnail": "thumbnail.png",
   "tech": [
-    "Tech1",
-    "Tech2"
+    "Kotlin",
+    "Android"
   ],
   "screenshots": [
     "1.png",
@@ -16,7 +16,7 @@
   ],
   "fullDescription": "Navigator application for cycling",
   "features": [
-    "Feature 1",
-    "Feature 2"
+    "Show your location with Google map.",
+    "Display metrics."
   ]
 }
