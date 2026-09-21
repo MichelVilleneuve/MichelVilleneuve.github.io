@@ -17,7 +17,6 @@ async function loadProjects() {
             console.error('Could not load projects.json manifest');
             return;
         }
-
         const manifest = await manifestResponse.json();
         const projectFolders = manifest.projects || [];
 
