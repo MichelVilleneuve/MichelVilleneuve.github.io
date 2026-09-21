@@ -2,7 +2,7 @@
   "folder": "ToDoList",
   "name": "TaskToDoList",
   "type": "Android Studio",
-  "description": "Android Studio app to manage tasks",
+  "description": "Create a list of tasks to do. Take a photo or create a sketch.",
   "date": "2024-09-18",
   "github": "https://github.com/michelvilleneuve/ToDoList",
   "thumbnail": "thumbnail.png",
