@@ -120,18 +120,7 @@ body {
     color: var(--color-primary);
 }
 
-/* Projects Container & Grid */
-.projects-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-}
 
 /* Project Card */
 .project-card {
