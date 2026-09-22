@@ -150,11 +150,6 @@ body {
     border-color: var(--color-primary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.project-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
 
 .project-thumbnail {
     background: var(--color-bg);
@@ -182,14 +177,6 @@ body {
     flex-direction: column;
 }
 
-
-.project-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-}
-
 .project-description {
     font-size: 13px;
     color: var(--color-text-secondary);
@@ -198,30 +185,9 @@ body {
     flex-grow: 1;
 }
 
-.project-tags {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.tag {
-    background: var(--color-primary-light);
-    color: var(--color-primary);
-    padding: 4px 10px;
-    border-radius: var(--radius);
-    font-size: 12px;
-    font-weight: 500;
-}
-
 .project-link {
     margin-top: auto;
 }
-
-.project-link:hover {
-    gap: 10px;
-}
-
 /* Detail Page Styles */
 .detail-header {
     background: var(--color-surface);
