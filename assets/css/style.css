@@ -142,7 +142,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));  /* CHANGED */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  /* CHANGED */
     gap: 1.5rem;
 }
 
