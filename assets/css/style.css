@@ -64,7 +64,416 @@ function renderProjects() {
         return true;
     });
 
+<<<<<<< HEAD
+    if (filtered.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #888; padding: 2rem;">No projects found</p>';
+        return;
+=======
+/* Header */
+.header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2rem 1.5rem;
+}
 
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.header-text p {
+    margin: 5px 0 0 0;
+}
+
+/* Filter Bar */
+.filter-bar {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.filter-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.filter-btn.active {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Projects Container & Grid */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Projects Container & Grid */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  /* CHANGED */
+    gap: 1.5rem;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: flex;  /* ADDED */
+    flex-direction: column;  /* ADDED */
+    height: 100%;  /* ADDED */
+}
+
+.project-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* CHANGED */
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-thumbnail {
+    background: var(--color-bg);
+    height: 100px;  /* CHANGED */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    overflow: hidden;
+    flex-shrink: 0;  /* ADDED */
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* CHANGED from contain */
+    object-position: center;
+}
+
+.project-info {
+    padding: 0.75rem;  /* CHANGED */
+    flex-grow: 1;  /* ADDED */
+    display: flex;  /* ADDED */
+    flex-direction: column;  /* ADDED */
+}
+
+.project-title {
+    font-size: 14px;  /* CHANGED */
+    font-weight: 500;
+    margin-bottom: 0.25rem;  /* CHANGED */
+    color: var(--color-text);
+}
+
+.project-description {
+    font-size: 12px;  /* CHANGED */
+    color: var(--color-text-secondary);
+    line-height: 1.4;  /* CHANGED */
+    margin-bottom: 0.5rem;  /* CHANGED */
+    flex-grow: 1;  /* ADDED */
+}
+
+.project-tags {
+    display: none;  /* ADDED - hide tags */
+}
+
+.tag {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    padding: 4px 10px;
+    border-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 12px;  /* CHANGED */
+    font-weight: 500;
+    transition: gap 0.2s ease;
+    margin-top: auto;  /* ADDED */
+}
+
+.project-link:hover {
+    gap: 10px;
+}
+/* Detail Page Styles */
+.detail-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2rem 1.5rem;
+}
+
+.detail-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    gap: 10px;
+}
+
+.detail-header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.detail-header p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+}
+
+.detail-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.meta-label {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.meta-value {
+    color: var(--color-text);
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    overflow: visible;
+    margin: 2rem 0;
+    aspect-ratio: 16 / 9;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    overflow: visible;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide.active img:hover {
+    transform: scale(1.6);
+    cursor: zoom-in;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-counter {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 20;
+}
+
+/* Section Content */
+.detail-section {
+    padding: 2rem 1.5rem;
+    background: var(--color-surface);
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+.detail-section h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.detail-section p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.links-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.link-btn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+>>>>>>> e8f92bdfbd08286e74442af0481f24458523279f
     }
 
     filtered.forEach(project => {
