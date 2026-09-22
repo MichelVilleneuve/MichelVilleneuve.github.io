@@ -3,6 +3,7 @@
     "BillboardApp",
     "BloodPressure",
     "CyclingTracker",
+    "EventPassFuture",
     "InventorFilesManager",
     "MedicationTracker",
     "ToDoList"
