@@ -84,10 +84,10 @@ function createProjectCard(project) {
     // Use thumbnail if available, otherwise use first screenshot
     let thumbnail = null;
 if (project.thumbnail) {
-    thumbnail = `projects/${project.folder}/screenshots/${project.thumbnail}`;
-    } else if (project.screenshots && project.screenshots[0]) {
-        thumbnail = `projects/${project.folder}/screenshots/${project.screenshots[0]}`;
-    }
+    thumbnail = `projects/${project.folder}/screenshots/${project.thumbnail}?v=${Date.now()}`;
+} else if (project.screenshots && project.screenshots[0]) {
+    thumbnail = `projects/${project.folder}/screenshots/${project.screenshots[0]}?v=${Date.now()}`;
+}
 
     const tagsHtml = project.tech
         ? project.tech.map(t => `<span class="tag">${t}</span>`).join('')
