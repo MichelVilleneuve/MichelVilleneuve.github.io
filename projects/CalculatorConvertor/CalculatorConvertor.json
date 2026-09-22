@@ -2,7 +2,7 @@
   "folder": "CalculatorConvertor",
   "name": "CalculatorConvertor",
   "type": "Android Studio",
-  "description": "Calculator with conversion units.",
+  "description": "Convert commun units from metric to imperial.",
   "date": "2026-09-22",
   "github": "https://github.com/michelvilleneuve/CalculatorConvertor",
   "thumbnail": "thumbnail.png",
@@ -23,7 +23,7 @@
     "9.png",
     "thumbnail.png"
   ],
-  "fullDescription": "Calculator with conversion units.",
+  "fullDescription": "Convert commun units from metric to imperial.",
   "features": [
     "Feature 1",
     "Feature 2"
