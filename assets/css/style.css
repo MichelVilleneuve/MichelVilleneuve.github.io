@@ -1,469 +1,314 @@
-/* Global Styles */
-:root {
-    --color-primary: #185FA5;
-    --color-primary-light: #E6F1FB;
-    --color-text: #2C2C2A;
-    --color-text-secondary: #5F5E5A;
-    --color-text-muted: #888780;
-    --color-border: #D3D1C7;
-    --color-bg: #F1EFE8;
-    --color-surface: #FFFFFF;
-    --radius: 8px;
-    --radius-lg: 12px;
-}
+// Project data cache
+let projects = [];
+let currentFilter = 'all';
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-primary: #85B7EB;
-        --color-primary-light: #042C53;
-        --color-text: #F1EFE8;
-        --color-text-secondary: #B4B2A9;
-        --color-text-muted: #888780;
-        --color-border: #444441;
-        --color-bg: #2C2C2A;
-        --color-surface: #3C3C3A;
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    loadProjects();
+    setupFilterButtons();
+});
+
+// Load all projects from projects.json manifest
+async function loadProjects() {
+    try {
+        // Load the projects manifest
+        const manifestResponse = await fetch('projects.json?v=' + Date.now());
+        if (!manifestResponse.ok) {
+            console.error('Could not load projects.json manifest');
+            return;
+        }
+        const manifest = await manifestResponse.json();
+        const projectFolders = manifest.projects || [];
+
+        // Load each project's JSON
+        for (const folder of projectFolders) {
+            try {
+                const response = await fetch(`projects/${folder}/${folder}.json?v=${Date.now()}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    projects.push(data);
+                } else {
+                    console.warn(`Could not load project: ${folder}`);
+                }
+            } catch (err) {
+                console.warn(`Error loading project ${folder}:`, err);
+            }
+        }
+
+        if (projects.length === 0) {
+            console.warn('No projects found');
+        }
+        
+        renderProjects();
+    } catch (err) {
+        console.error('Error loading projects:', err);
     }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// Render projects based on current filter
+function renderProjects() {
+    const grid = document.getElementById('projectsGrid');
+    grid.innerHTML = '';
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-text);
-    background: var(--color-bg);
-}
+    const filtered = projects.filter(project => {
+        if (currentFilter === 'all') return true;
+        
+        // Simple substring match on project type
+        if (currentFilter === 'visual-studio') {
+            return project.type.toLowerCase().includes('visual studio') || project.type.toLowerCase().includes('c#');
+        }
+        if (currentFilter === 'android') {
+            return project.type.toLowerCase().includes('android');
+        }
+        
+        return true;
+    });
 
-/* Header */
-.header {
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    padding: 2rem 1.5rem;
-}
-
-.header-content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.header-main {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-logo {
-    height: 80px;
-    width: auto;
-    flex-shrink: 0;
-}
-
-.header-text h1 {
-    margin: 0;
-    padding: 0;
-}
-
-.header-text p {
-    margin: 5px 0 0 0;
-}
-
-/* Filter Bar */
-.filter-bar {
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    padding: 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.filter-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.filter-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-}
-
-.filter-btn {
-    padding: 6px 14px;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border);
-    background: transparent;
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.filter-btn:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-}
-
-.filter-btn.active {
-    background: var(--color-primary-light);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-}
-
-/* Projects Container & Grid */
-.projects-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Projects Container & Grid */
-.projects-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));  /* CHANGED */
-    gap: 1.5rem;
-}
-
-/* Project Card */
-.project-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    display: flex;  /* ADDED */
-    flex-direction: column;  /* ADDED */
-    height: 100%;  /* ADDED */
-}
-
-.project-card:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* CHANGED */
-}
-
-.project-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.project-thumbnail {
-    background: var(--color-bg);
-    height: 180px;  /* CHANGED */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    font-size: 13px;
-    overflow: hidden;
-    flex-shrink: 0;  /* ADDED */
-}
-
-.project-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* CHANGED from contain */
-    object-position: center;
-}
-
-.project-info {
-    padding: 0.75rem;  /* CHANGED */
-    flex-grow: 1;  /* ADDED */
-    display: flex;  /* ADDED */
-    flex-direction: column;  /* ADDED */
-}
-
-.project-title {
-    font-size: 14px;  /* CHANGED */
-    font-weight: 500;
-    margin-bottom: 0.25rem;  /* CHANGED */
-    color: var(--color-text);
-}
-
-.project-description {
-    font-size: 12px;  /* CHANGED */
-    color: var(--color-text-secondary);
-    line-height: 1.4;  /* CHANGED */
-    margin-bottom: 0.5rem;  /* CHANGED */
-    flex-grow: 1;  /* ADDED */
-}
-
-.project-tags {
-    display: none;  /* ADDED - hide tags */
-}
-
-.tag {
-    background: var(--color-primary-light);
-    color: var(--color-primary);
-    padding: 4px 10px;
-    border-radius: var(--radius);
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--color-primary);
-    font-size: 12px;  /* CHANGED */
-    font-weight: 500;
-    transition: gap 0.2s ease;
-    margin-top: auto;  /* ADDED */
-}
-
-.project-link:hover {
-    gap: 10px;
-}
-/* Detail Page Styles */
-.detail-header {
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    padding: 2rem 1.5rem;
-}
-
-.detail-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--color-primary);
-    text-decoration: none;
-    margin-bottom: 1rem;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.back-link:hover {
-    gap: 10px;
-}
-
-.detail-header h1 {
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.detail-header p {
-    color: var(--color-text-secondary);
-    margin-bottom: 1rem;
-}
-
-.detail-meta {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-}
-
-.meta-label {
-    color: var(--color-text-secondary);
-    font-weight: 500;
-}
-
-.meta-value {
-    color: var(--color-text);
-}
-
-/* Carousel */
-.carousel {
-    position: relative;
-    background: var(--color-bg);
-    border-radius: var(--radius-lg);
-    overflow: visible;
-    margin: 2rem 0;
-    aspect-ratio: 16 / 9;
-}
-
-.carousel-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: var(--color-bg);
-    overflow: visible;
-}
-
-.carousel-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    z-index: 1;
-}
-
-.carousel-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.carousel-slide.active img:hover {
-    transform: scale(1.6);
-    cursor: zoom-in;
-}
-
-/* Carousel buttons */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 20;
-}
-
-.carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.carousel-prev {
-    left: 0;
-}
-
-.carousel-next {
-    right: 0;
-}
-
-.carousel-counter {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 6px 12px;
-    border-radius: var(--radius);
-    font-size: 12px;
-    font-weight: 500;
-    z-index: 20;
-}
-
-/* Section Content */
-.detail-section {
-    padding: 2rem 1.5rem;
-    background: var(--color-surface);
-    margin: 1rem auto;
-    max-width: 800px;
-}
-
-.detail-section h2 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: var(--color-text);
-}
-
-.detail-section p {
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-.links-group {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-}
-
-.link-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
-    background: var(--color-primary-light);
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.2s ease;
-}
-
-.link-btn:hover {
-    background: var(--color-primary);
-    color: white;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
+    if (filtered.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #888; padding: 2rem;">No projects found</p>';
+        return;
     }
 
-    .header h1 {
-        font-size: 24px;
+    filtered.forEach(project => {
+        const card = createProjectCard(project);
+        grid.appendChild(card);
+    });
+}
+
+// Create a project card element
+function createProjectCard(project) {
+    const card = document.createElement('a');
+    card.href = `projects/${project.folder}/`;
+    card.className = 'project-card';
+
+    // Use thumbnail if available, otherwise use first screenshot
+    let thumbnail = null;
+if (project.thumbnail) {
+    thumbnail = `projects/${project.folder}/screenshots/${project.thumbnail}?v=${Date.now()}`;
+} else if (project.screenshots && project.screenshots[0]) {
+    thumbnail = `projects/${project.folder}/screenshots/${project.screenshots[0]}?v=${Date.now()}`;
+}
+
+    const tagsHtml = project.tech
+        ? project.tech.map(t => `<span class="tag">${t}</span>`).join('')
+        : '';
+
+    card.innerHTML = `
+        <div class="project-thumbnail">
+            ${thumbnail ? `<img src="${thumbnail}" alt="${project.name}">` : 'Screenshot'}
+        </div>
+        <div class="project-info">
+            <h3 class="project-title">${project.name}</h3>
+            <p class="project-description">${project.description}</p>
+            <div class="project-tags">${tagsHtml}</div>
+            <span class="project-link">
+                View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M7 7h10v10"></path>
+                </svg>
+            </span>
+        </div>
+    `;
+
+    return card;
+}
+
+// Setup filter buttons
+function setupFilterButtons() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            renderProjects();
+        });
+    });
+}
+
+// Carousel functionality (for detail pages)
+class Carousel {
+    constructor(containerId) {
+        this.container = document.getElementById(containerId);
+        if (!this.container) return;
+
+        this.slides = this.container.querySelectorAll('.carousel-slide');
+        this.currentIndex = 0;
+
+        if (this.slides.length === 0) return;
+
+        this.prevBtn = this.container.querySelector('.carousel-prev');
+        this.nextBtn = this.container.querySelector('.carousel-next');
+        this.counter = this.container.querySelector('.carousel-counter');
+
+        this.setup();
     }
 
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
+    setup() {
+        this.showSlide(0);
+
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.previous());
+        }
+
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.next());
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.previous();
+            }
+
+            if (e.key === 'ArrowRight') {
+                this.next();
+            }
+        });
+
+        // Reposition arrows when browser window changes size
+        window.addEventListener('resize', () => {
+            this.positionArrows();
+        });
+
+        // Reposition arrows when images finish loading
+        this.container.querySelectorAll('img').forEach(img => {
+            if (img.complete) {
+                this.positionArrows();
+            } else {
+                img.addEventListener('load', () => {
+                    this.positionArrows();
+                });
+            }
+        });
     }
 
-    .carousel-prev {
-        left: 8px;
+    showSlide(index) {
+        if (this.slides.length === 0) return;
+
+        // Wrap around
+        if (index >= this.slides.length) {
+            index = 0;
+        }
+
+        if (index < 0) {
+            index = this.slides.length - 1;
+        }
+
+        this.currentIndex = index;
+
+        // Hide all slides
+        this.slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        // Show current slide
+        const activeSlide = this.slides[this.currentIndex];
+        activeSlide.classList.add('active');
+
+        // Update counter
+        if (this.counter) {
+            this.counter.textContent =
+                `${this.currentIndex + 1} of ${this.slides.length}`;
+        }
+
+        // Wait for browser to render the new slide
+        requestAnimationFrame(() => {
+            this.positionArrows();
+        });
     }
 
-    .carousel-next {
-        right: 8px;
+    positionArrows() {
+        if (!this.container) return;
+
+        const activeSlide = this.slides[this.currentIndex];
+
+        if (!activeSlide) return;
+
+        const image = activeSlide.querySelector('img');
+
+        if (!image) return;
+
+        /*
+         * IMPORTANT:
+         * Use the image's natural dimensions rather than
+         * getBoundingClientRect().
+         *
+         * This means the hover zoom (scale(1.6)) does NOT
+         * affect where the arrows are positioned.
+         */
+        const naturalWidth = image.naturalWidth;
+        const naturalHeight = image.naturalHeight;
+
+        if (!naturalWidth || !naturalHeight) return;
+
+        const containerWidth = this.container.clientWidth;
+        const containerHeight = this.container.clientHeight;
+
+        /*
+         * Calculate the size of the image as it appears
+         * inside the carousel with object-fit: contain.
+         */
+        const imageRatio = naturalWidth / naturalHeight;
+        const containerRatio = containerWidth / containerHeight;
+
+        let imageWidth;
+        let imageHeight;
+
+        if (imageRatio > containerRatio) {
+            // Image is wider than the carousel
+            imageWidth = containerWidth;
+            imageHeight = containerWidth / imageRatio;
+        } else {
+            // Image is taller/narrower than the carousel
+            imageHeight = containerHeight;
+            imageWidth = containerHeight * imageRatio;
+        }
+
+        /*
+         * object-fit: contain centers the image.
+         * Calculate the empty space around it.
+         */
+        const imageLeft = (containerWidth - imageWidth) / 2;
+        const imageRight = imageLeft + imageWidth;
+
+        const buttonWidth = this.prevBtn
+            ? this.prevBtn.offsetWidth
+            : 44;
+
+        const gap = 10;
+
+        /*
+         * Position the LEFT arrow outside the image.
+         */
+        if (this.prevBtn) {
+            const leftPosition =
+                imageLeft - buttonWidth - gap;
+
+            this.prevBtn.style.left = `${leftPosition}px`;
+            this.prevBtn.style.right = 'auto';
+        }
+
+        /*
+         * Position the RIGHT arrow outside the image.
+         */
+        if (this.nextBtn) {
+            const rightPosition =
+                containerWidth - imageRight - buttonWidth - gap;
+
+            this.nextBtn.style.right = `${rightPosition}px`;
+            this.nextBtn.style.left = 'auto';
+        }
     }
 
-    .filter-content {
-        justify-content: flex-start;
+    next() {
+        this.showSlide(this.currentIndex + 1);
+    }
+
+    previous() {
+        this.showSlide(this.currentIndex - 1);
     }
 }
+
+// Initialize carousel on detail pages
+window.Carousel = Carousel;

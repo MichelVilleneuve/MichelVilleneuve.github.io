@@ -15,7 +15,8 @@
     "1.png",
     "2.png",
     "3.png",
-    "4.png"
+    "4.png",
+    "thumbnail.png"
   ],
   "fullDescription": "Billboard App is a comprehensive Windows desktop application that transforms a PC monitor (or multiple monitors) into a rotating content display with multi-monitor support, content scheduling, music/audio, and a full admin panel.",
   "features": [
