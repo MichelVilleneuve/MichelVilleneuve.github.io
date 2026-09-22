@@ -1,0 +1,19 @@
+﻿{
+  "folder": "MyApp2",
+  "name": "My App 2",
+  "type": "Android Studio",
+  "description": "My App 2",
+  "date": "2026-09-22",
+  "github": "https://github.com/michelvilleneuve/MyApp2",
+  "thumbnail": "thumbnail.png",
+  "tech": [
+    "Kotlin",
+    "Android"
+  ],
+  "screenshots": [
+    "1.png",
+    "thumbnail.png"
+  ],
+  "fullDescription": "My App 2",
+  "features": []
+}
