@@ -1,0 +1,31 @@
+﻿{
+  "folder": "CalculatorConvertor",
+  "name": "CalculatorConvertor",
+  "type": "Android Studio",
+  "description": "Calculator with conversion units.",
+  "date": "2026-09-22",
+  "github": "https://github.com/michelvilleneuve/CalculatorConvertor",
+  "thumbnail": "thumbnail.png",
+  "tech": [
+    "Tech1",
+    "Tech2"
+  ],
+  "screenshots": [
+    "1.png",
+    "10.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png",
+    "6.png",
+    "7.png",
+    "8.png",
+    "9.png",
+    "thumbnail.png"
+  ],
+  "fullDescription": "Calculator with conversion units.",
+  "features": [
+    "Feature 1",
+    "Feature 2"
+  ]
+}

@@ -2,6 +2,7 @@
   "projects": [
     "BillboardApp",
     "BloodPressure",
+    "CalculatorConvertor",
     "CyclingTracker",
     "EventPassFuture",
     "InventorFilesManager",
