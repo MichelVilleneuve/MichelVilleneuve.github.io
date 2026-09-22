@@ -172,7 +172,7 @@ body {
 
 .project-thumbnail {
     background: var(--color-bg);
-    height: 180px;  /* CHANGED */
+    height: 100px;  /* CHANGED */
     display: flex;
     align-items: center;
     justify-content: center;
