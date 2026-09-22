@@ -171,7 +171,7 @@ class Carousel {
             this.positionArrows();
         });
 
-        // Wait for images to finish loading
+        // Reposition arrows when images finish loading
         this.container.querySelectorAll('img').forEach(img => {
             if (img.complete) {
                 this.positionArrows();
@@ -203,7 +203,8 @@ class Carousel {
         });
 
         // Show current slide
-        this.slides[this.currentIndex].classList.add('active');
+        const activeSlide = this.slides[this.currentIndex];
+        activeSlide.classList.add('active');
 
         // Update counter
         if (this.counter) {
@@ -211,8 +212,7 @@ class Carousel {
                 `${this.currentIndex + 1} of ${this.slides.length}`;
         }
 
-        // Position arrows for the new image
-        // A tiny delay lets the browser calculate the image dimensions
+        // Wait for browser to render the new slide
         requestAnimationFrame(() => {
             this.positionArrows();
         });
@@ -229,39 +229,72 @@ class Carousel {
 
         if (!image) return;
 
-        // Get actual displayed image dimensions
-        const imageRect = image.getBoundingClientRect();
-        const containerRect = this.container.getBoundingClientRect();
+        /*
+         * IMPORTANT:
+         * Use the image's natural dimensions rather than
+         * getBoundingClientRect().
+         *
+         * This means the hover zoom (scale(1.6)) does NOT
+         * affect where the arrows are positioned.
+         */
+        const naturalWidth = image.naturalWidth;
+        const naturalHeight = image.naturalHeight;
 
-        // Width of the arrow buttons
+        if (!naturalWidth || !naturalHeight) return;
+
+        const containerWidth = this.container.clientWidth;
+        const containerHeight = this.container.clientHeight;
+
+        /*
+         * Calculate the size of the image as it appears
+         * inside the carousel with object-fit: contain.
+         */
+        const imageRatio = naturalWidth / naturalHeight;
+        const containerRatio = containerWidth / containerHeight;
+
+        let imageWidth;
+        let imageHeight;
+
+        if (imageRatio > containerRatio) {
+            // Image is wider than the carousel
+            imageWidth = containerWidth;
+            imageHeight = containerWidth / imageRatio;
+        } else {
+            // Image is taller/narrower than the carousel
+            imageHeight = containerHeight;
+            imageWidth = containerHeight * imageRatio;
+        }
+
+        /*
+         * object-fit: contain centers the image.
+         * Calculate the empty space around it.
+         */
+        const imageLeft = (containerWidth - imageWidth) / 2;
+        const imageRight = imageLeft + imageWidth;
+
         const buttonWidth = this.prevBtn
             ? this.prevBtn.offsetWidth
             : 44;
 
-        const gap = 8;
+        const gap = 10;
 
-        // Calculate image position relative to carousel
-        const imageLeft = imageRect.left - containerRect.left;
-        const imageRight = imageRect.right - containerRect.left;
-
-        // Position previous arrow just outside left side of image
+        /*
+         * Position the LEFT arrow outside the image.
+         */
         if (this.prevBtn) {
-            let leftPosition = imageLeft - buttonWidth - gap;
-
-            // Don't let arrow go outside carousel
-            leftPosition = Math.max(8, leftPosition);
+            const leftPosition =
+                imageLeft - buttonWidth - gap;
 
             this.prevBtn.style.left = `${leftPosition}px`;
             this.prevBtn.style.right = 'auto';
         }
 
-        // Position next arrow just outside right side of image
+        /*
+         * Position the RIGHT arrow outside the image.
+         */
         if (this.nextBtn) {
-            let rightPosition =
-                containerRect.right - imageRect.right - buttonWidth - gap;
-
-            // Don't let arrow go outside carousel
-            rightPosition = Math.max(8, rightPosition);
+            const rightPosition =
+                containerWidth - imageRight - buttonWidth - gap;
 
             this.nextBtn.style.right = `${rightPosition}px`;
             this.nextBtn.style.left = 'auto';

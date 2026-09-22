@@ -1,6 +1,7 @@
 ﻿{
   "projects": [
     "BillboardApp",
+    "BloodPressure",
     "CyclingTracker",
     "InventorFilesManager",
     "MedicationTracker",

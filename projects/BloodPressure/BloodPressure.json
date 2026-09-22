@@ -1,0 +1,24 @@
+﻿{
+  "folder": "BloodPressure",
+  "name": "BloodPressure",
+  "type": "Android Studio",
+  "description": "Blood pressure application.",
+  "date": "2026-09-22",
+  "github": "https://github.com/michelvilleneuve/BloodPressure",
+  "thumbnail": "thumbnail.png",
+  "tech": [
+    "Tech1",
+    "Tech2"
+  ],
+  "screenshots": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png"
+  ],
+  "fullDescription": "Blood pressure application.",
+  "features": [
+    "Feature 1",
+    "Feature 2"
+  ]
+}
