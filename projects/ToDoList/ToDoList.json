@@ -18,7 +18,8 @@
     "5.png",
     "6.png",
     "7.png",
-    "8.png"
+    "8.png",
+    "thumbnail.png"
   ],
   "fullDescription": "TaskToDoList is a comprehensive Android Studio app for managing tasks.",
   "features": [
